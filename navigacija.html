@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sveaverken F200 — autopilot navigacija za traktore | Bačka Topola</title>
+<meta name="description" content="Sveaverken F200 sistem za automatsko upravljanje traktorom. RTK preciznost ±2,5 cm, ISOBUS, 3 godine RTK signala i instalacija u ceni. 4.500 € + PDV. Bačka Topola, Srbija.">
+<meta name="keywords" content="Sveaverken F200, autopilot navigacija, GPS navigacija za traktor, RTK, precizna poljoprivreda, auto steer, ISOBUS, Bačka Topola, Vojvodina">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sr_RS">
+<meta property="og:title" content="Sveaverken F200 — autopilot navigacija za traktore">
+<meta property="og:description" content="RTK preciznost ±2,5 cm. 3 godine RTK signala, 10 parcela i instalacija u ceni. 4.500 € + PDV.">
+<!-- IZMENI: domen i og slika -->
+<meta property="og:url" content="https://autopilotnavigacije.com/">
+<meta name="theme-color" content="#171310">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --zemlja:#171310;
+  --zemlja-2:#221C17;
+  --slama:#EDE6D6;
+  --rotaciono:#F25C05;
+  --klas:#F2B705;
+  --linija:rgba(237,230,214,.14);
+  --linija-tamna:rgba(23,19,16,.14);
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--slama);color:var(--zemlja);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Archivo Black',Impact,sans-serif;font-weight:400;line-height:1.02;letter-spacing:-.02em;text-transform:uppercase}
+.mono{font-family:'IBM Plex Mono',monospace}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.oznaka{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.55;display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.oznaka::after{content:"";flex:1;height:1px;background:currentColor;opacity:.3}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(237,230,214,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linija-tamna)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Archivo Black',sans-serif;font-size:15px;text-transform:uppercase;text-decoration:none}
+.logo .nis{width:22px;height:22px;flex:none}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font-size:14px;text-decoration:none;opacity:.7;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.tel-btn{background:var(--zemlja);color:var(--slama);text-decoration:none;padding:10px 18px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.04em;transition:background .2s;white-space:nowrap}
+.tel-btn:hover{background:var(--rotaciono)}
+@media(max-width:900px){.nav-links a:not(.tel-btn){display:none}}
+
+header{background:var(--zemlja);color:var(--slama);padding:76px 0 0;overflow:hidden;position:relative}
+header::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--linija) 1px,transparent 1px),linear-gradient(90deg,var(--linija) 1px,transparent 1px);background-size:56px 56px;opacity:.5;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative}
+h1{font-size:clamp(36px,4.8vw,62px)}
+h1 em{font-style:normal;color:var(--rotaciono)}
+.hero-lead{margin-top:22px;font-size:19px;max-width:44ch;opacity:.82}
+.hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 26px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid transparent;transition:transform .15s,background .2s,color .2s}
+.btn:active{transform:translateY(1px)}
+.btn-1{background:var(--rotaciono);color:#fff}
+.btn-1:hover{background:var(--klas);color:var(--zemlja)}
+.btn-2{border-color:rgba(237,230,214,.35);color:var(--slama)}
+.btn-2:hover{background:rgba(237,230,214,.1)}
+
+.foto-box{border:1px solid var(--linija);background:rgba(0,0,0,.25);padding:14px}
+.foto-head{display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-bottom:12px}
+.foto-head .tag{color:var(--klas)}
+.foto-box img{width:100%;height:auto;display:block;padding:10px 0}
+.foto-potpis{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;opacity:.5;margin-top:12px;line-height:1.5}
+
+.traka{border-top:1px solid var(--linija);margin-top:70px;position:relative}
+.traka-in{display:grid;grid-template-columns:repeat(4,1fr)}
+.traka-in div{padding:26px 20px 30px;border-left:1px solid var(--linija)}
+.traka-in div:first-child{border-left:none;padding-left:0}
+.traka-in .v{font-family:'Archivo Black',sans-serif;font-size:26px;color:var(--rotaciono)}
+.traka-in .k{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-top:6px}
+
+section{padding:96px 0;border-top:1px solid var(--linija-tamna)}
+h2{font-size:clamp(28px,3.6vw,44px);max-width:20ch}
+.uvod{margin-top:18px;max-width:56ch;opacity:.75}
+
+.karte{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linija-tamna);border:1px solid var(--linija-tamna);margin-top:48px}
+.karta{background:var(--slama);padding:32px 26px 36px}
+.karta h3{font-size:17px;margin:16px 0 10px}
+.karta p{font-size:15px;opacity:.72}
+.karta svg{width:26px;height:26px;stroke:var(--rotaciono);fill:none;stroke-width:1.6}
+
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:0 56px;margin-top:44px}
+.spec-red{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--linija-tamna);font-size:15px}
+.spec-red span:first-child{opacity:.6;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding-top:3px}
+.spec-red span:last-child{text-align:right;font-weight:500}
+
+.koraci{margin-top:48px;border-top:1px solid var(--linija-tamna)}
+.korak{display:grid;grid-template-columns:64px 1fr 2fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--linija-tamna);align-items:start}
+.korak .br{font-family:'IBM Plex Mono',monospace;font-size:13px;opacity:.4;padding-top:4px}
+.korak h3{font-size:19px}
+.korak p{font-size:15px;opacity:.72}
+@media(max-width:760px){.korak{grid-template-columns:44px 1fr;gap:14px}.korak p{grid-column:2}}
+
+#kalkulator{background:var(--zemlja);color:var(--slama);border-top:none}
+#kalkulator .oznaka,#kalkulator .uvod{opacity:.6}
+.kalk{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:48px;align-items:start}
+.polje{margin-bottom:26px}
+.polje label{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:10px}
+.polje label b{font-weight:500;color:var(--klas);opacity:1}
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:2px;background:rgba(237,230,214,.25);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:var(--rotaciono);cursor:pointer;border-radius:0}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;background:var(--rotaciono);cursor:pointer;border:none;border-radius:0}
+input[type=range]:focus-visible{outline:2px solid var(--klas);outline-offset:6px}
+.rezultat{border:1px solid var(--linija);padding:34px 30px}
+.rezultat .glavno{font-family:'Archivo Black',sans-serif;font-size:clamp(40px,5vw,58px);color:var(--klas);line-height:1}
+.rezultat .glavno-k{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.55;margin-top:10px}
+.rezultat hr{border:none;border-top:1px solid var(--linija);margin:26px 0}
+.red{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:13px;padding:7px 0}
+.red span:first-child{opacity:.55}
+.napomena{font-size:12px;opacity:.4;margin-top:20px;line-height:1.5}
+
+.paket{display:grid;grid-template-columns:1.05fr 1fr;gap:1px;background:var(--linija-tamna);border:1px solid var(--linija-tamna);margin-top:48px}
+.paket>div{background:var(--slama);padding:40px 34px}
+.cena{font-family:'Archivo Black',sans-serif;font-size:clamp(38px,4.6vw,54px);color:var(--rotaciono);line-height:1}
+.cena small{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--zemlja);opacity:.55;display:block;margin-top:10px;letter-spacing:.06em}
+.lista{list-style:none;margin-top:26px}
+.lista li{padding:12px 0 12px 28px;border-bottom:1px solid var(--linija-tamna);font-size:15px;position:relative}
+.lista li::before{content:"+";position:absolute;left:0;color:var(--rotaciono);font-family:'IBM Plex Mono',monospace}
+.lista li:last-child{border-bottom:none}
+.lista li b{display:block;font-weight:600}
+.lista li em{font-style:normal;opacity:.65;font-size:14px}
+
+.masine{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.masine span{border:1px solid var(--linija-tamna);padding:9px 16px;font-family:'IBM Plex Mono',monospace;font-size:13px}
+
+details{border-bottom:1px solid var(--linija-tamna);padding:20px 0}
+details summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";color:var(--rotaciono);font-family:'IBM Plex Mono',monospace;flex:none}
+details[open] summary::after{content:"−"}
+details p{margin-top:14px;opacity:.75;font-size:15px;max-width:70ch}
+
+#kontakt{background:var(--zemlja);color:var(--slama);border-top:none}
+.kontakt-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;margin-top:48px}
+.kontakt-info a{text-decoration:none;display:block;font-family:'IBM Plex Mono',monospace;font-size:19px;color:var(--klas);margin-bottom:6px;word-break:break-word}
+.kontakt-info a:hover{color:var(--rotaciono)}
+.kontakt-info .k{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.5}
+.kontakt-info .blok{padding:20px 0;border-bottom:1px solid var(--linija)}
+.kontakt-info .blok:first-child{padding-top:0}
+form .polje-f{margin-bottom:18px}
+form label{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin-bottom:8px}
+input[type=text],input[type=tel],input[type=email],textarea{width:100%;background:rgba(237,230,214,.06);border:1px solid var(--linija);color:var(--slama);padding:13px 14px;font-family:'IBM Plex Sans',sans-serif;font-size:16px}
+input:focus,textarea:focus{outline:none;border-color:var(--rotaciono)}
+textarea{resize:vertical;min-height:110px}
+form .btn-1{width:100%;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;padding:16px}
+.status{font-family:'IBM Plex Mono',monospace;font-size:13px;margin-top:14px;min-height:20px;color:var(--klas)}
+
+
+#video{background:var(--zemlja);color:var(--slama);border-top:1px solid var(--linija)}
+#video .oznaka,#video .uvod{opacity:.6}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:48px}
+.video-ram{border:1px solid var(--linija);padding:14px;background:rgba(0,0,0,.25);max-width:360px;margin:0 auto}
+.video-odnos{position:relative;width:100%;padding-top:177.7%;background:var(--zemlja-2)}
+.video-odnos iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.video-fb{display:inline-block;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--klas);text-decoration:none}
+.video-fb:hover{color:var(--rotaciono)}
+.video-tekst h2{max-width:16ch}
+.video-tekst .citat{border-left:2px solid var(--rotaciono);padding-left:20px;margin-top:28px;font-size:19px;line-height:1.5}
+@media(max-width:900px){.video-grid{grid-template-columns:1fr;gap:36px}}
+
+footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.footer-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;opacity:.55}
+.footer-in a{text-decoration:none}
+.footer-in a:hover{color:var(--rotaciono)}
+
+@media(max-width:900px){
+  .hero-grid,.kalk,.kontakt-grid,.paket,.spec{grid-template-columns:1fr;gap:40px}
+  .paket{gap:1px}
+  .spec{gap:0}
+  .karte{grid-template-columns:1fr}
+  .traka-in{grid-template-columns:1fr 1fr}
+  .traka-in div{border-left:none;border-top:1px solid var(--linija);padding-left:0}
+  .traka-in div:nth-child(2),.traka-in div:nth-child(4){border-left:1px solid var(--linija);padding-left:20px}
+  section{padding:64px 0}
+  header{padding-top:48px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="#" class="logo">
+      <svg class="nis" viewBox="0 0 24 24" fill="none" stroke="#F25C05" stroke-width="1.6">
+        <circle cx="12" cy="12" r="7"/><path d="M12 1v5M12 18v5M1 12h5M18 12h5"/><circle cx="12" cy="12" r="1.6" fill="#F25C05" stroke="none"/>
+      </svg>
+      Autopilot Navigacije
+    </a>
+    <div class="nav-links">
+      <a href="#video">Video</a>
+      <a href="#prednosti">Prednosti</a>
+      <a href="#specifikacije">F200</a>
+      <a href="#kalkulator">Kalkulator</a>
+      <a href="#cena">Cena</a>
+      <a href="tel:+381606553500" class="tel-btn">060 655 3500</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="oznaka mono">Sveaverken F200 · Bačka Topola</div>
+        <h1>Svaki prohod tačno <em>tamo gde treba</em>.</h1>
+        <p class="hero-lead">Sveaverken F200 — sistem za automatsko upravljanje sa RTK preciznošću ±2,5 cm. U ceni su tri godine RTK signala, deset parcela i kompletna instalacija. Montažu radimo mi.</p>
+        <div class="hero-cta">
+          <a href="#kontakt" class="btn btn-1">Zakaži demonstraciju</a>
+          <a href="#kalkulator" class="btn btn-2">Izračunaj uštedu</a>
+        </div>
+      </div>
+
+      <div class="foto-box">
+        <div class="foto-head">
+          <span>Sveaverken F200 · kompletan set</span>
+          <span class="tag">Volan · antena · ekran</span>
+        </div>
+        <img src="slika.png" alt="Sveaverken F200 — kompletan set: uređaj za automatsko upravljanje, ekran i antena" loading="eager" width="1160" height="680">
+        <div class="foto-potpis">Uređaj, ekran, antena i instalacija — sve u jednoj ceni.</div>
+      </div>
+    </div>
+
+    <div class="traka">
+      <div class="wrap" style="padding:0">
+        <div class="traka-in">
+          <div><div class="v">±2,5 cm</div><div class="k">RTK preciznost</div></div>
+          <div><div class="v">3 godine</div><div class="k">RTK signal u ceni</div></div>
+          <div><div class="v">10 parcela</div><div class="k">Unos uključen, po izboru</div></div>
+          <div><div class="v">ISOBUS</div><div class="k">Kompatibilnost</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="video">
+  <div class="wrap">
+    <div class="video-grid">
+      <div class="video-ram">
+        <div class="video-odnos">
+          <iframe
+            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1541144203415324&show_text=false&width=360&height=640&t=0"
+            scrolling="no" frameborder="0" allowfullscreen="true" loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            title="Ugradnja Sveaverken F200 — snimak sa terena"></iframe>
+        </div>
+        <a class="video-fb" href="https://www.facebook.com/reel/1541144203415324" target="_blank" rel="noopener">Otvori na Facebooku &rarr;</a>
+      </div>
+
+      <div class="video-tekst">
+        <div class="oznaka">Sa terena</div>
+        <h2>Naše ugradnje, ne reklamne fotografije</h2>
+        <p class="uvod">Ovako sistem izgleda u stvarnim uslovima — na traktoru, na parceli, posle montaže koju smo sami odradili.</p>
+        <p class="citat">Koliko bi posao bio lakši kada bi traktor u svakom prolazu išao tačno tamo gde treba?</p>
+        <a href="#kontakt" class="btn btn-1" style="margin-top:30px">Zakaži demonstraciju</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prednosti">
+  <div class="wrap">
+    <div class="oznaka">Zašto F200</div>
+    <h2>Preklapanje je trošak koji plaćate svake sezone</h2>
+    <p class="uvod">Vozač koji "niša ni" ceo dan preklapa 15–25 cm po prohodu. Na 200 hektara i pet operacija godišnje, to su gorivo, seme, đubrivo i hemija koji dvaput odu u istu zemlju.</p>
+
+    <div class="karte">
+      <div class="karta">
+        <svg viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg>
+        <h3>Preciznost na nivou centimetra</h3>
+        <p>RTK korekcija drži mašinu u ±2,5 cm. To je razlika između navigacije koja pomaže i autopilota koji drži liniju.</p>
+      </div>
+      <div class="karta">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M8 21h8"/></svg>
+        <h3>Jednostavno rukovanje</h3>
+        <p>Veliki ekran osetljiv na dodir i logičan meni. Obuka traje kratko — sistem je napravljen za rad, ne za učenje.</p>
+      </div>
+      <div class="karta">
+        <svg viewBox="0 0 24 24"><path d="M4 15a4 4 0 013-6.8 5 5 0 019.6-1A4 4 0 0119 15z"/><path d="M8 19h8"/></svg>
+        <h3>Pouzdano u svakim uslovima</h3>
+        <p>Rad noću, u prašini i magli, na ravnici i na zahtevnijem terenu. Linija ostaje linija bez obzira na vidljivost.</p>
+      </div>
+      <div class="karta">
+        <svg viewBox="0 0 24 24"><path d="M3 20h18M6 20V9l6-5 6 5v11"/></svg>
+        <h3>Manje inputa, manje goriva</h3>
+        <p>Nema duplog prolaza i nema propuštenih traka. Repromaterijal se troši tačno onoliko koliko parcela traži.</p>
+      </div>
+      <div class="karta">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <h3>Jedna licenca, deset parcela</h3>
+        <p>Parcele koje sami birate ostaju u sistemu. Sledeće sezone samo izaberete parcelu iz liste i nastavljate.</p>
+      </div>
+      <div class="karta">
+        <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18"/></svg>
+        <h3>RTK signal tri godine</h3>
+        <p>Bez pretplate i bez skrivenih troškova u prve tri godine. Signal je uključen u cenu sistema.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="specifikacije">
+  <div class="wrap">
+    <div class="oznaka">Sveaverken F200</div>
+    <h2>Šta uređaj radi</h2>
+    <p class="uvod">Automatsko upravljanje za setvu, prskanje, đubrenje, obradu i druge radove — na velikom broju traktorskih marki.</p>
+
+    <!-- IZMENI: dopuni tehničkim podacima iz zvanične dokumentacije ako imaš -->
+    <div class="spec">
+      <div>
+        <div class="spec-red"><span>Preciznost</span><span>±2,5 cm uz RTK signal</span></div>
+        <div class="spec-red"><span>Upravljanje</span><span>Automatsko, elektromotor na volanu</span></div>
+        <div class="spec-red"><span>Ekran</span><span>Veliki format, osetljiv na dodir</span></div>
+        <div class="spec-red"><span>Linije</span><span>A-B, krive, konture parcele</span></div>
+      </div>
+      <div>
+        <div class="spec-red"><span>Povezivanje</span><span>ISOBUS kompatibilnost</span></div>
+        <div class="spec-red"><span>Parcele</span><span>10 parcela po licenci</span></div>
+        <div class="spec-red"><span>Primena</span><span>Setva, prskanje, đubrenje, obrada</span></div>
+        <div class="spec-red"><span>Montaža</span><span>Brza ugradnja, radimo je mi</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:44px">
+      <div class="oznaka">Priključne mašine</div>
+      <div class="masine">
+        <span>Traktori</span><span>Sejalice</span><span>Prskalice</span><span>Rasipači</span>
+        <span>Kultivatori</span><span>Plugovi</span><span>Tanjirače</span><span>Kombajni</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kako">
+  <div class="wrap">
+    <div class="oznaka">Od dolaska do prve brazde</div>
+    <h2>Kako to izgleda u praksi</h2>
+
+    <div class="koraci">
+      <div class="korak">
+        <div class="br">01</div>
+        <h3>Montaža na vaš traktor</h3>
+        <p>Instalaciju radimo mi — uređaj, antena, ekran i kalibracija. Sve na jednom mestu, bez slanja kod trećih lica.</p>
+      </div>
+      <div class="korak">
+        <div class="br">02</div>
+        <h3>Unos parcela</h3>
+        <p>Deset parcela po vašem izboru unosimo besplatno. Granice, međe i A-B linije ostaju sačuvane u sistemu.</p>
+      </div>
+      <div class="korak">
+        <div class="br">03</div>
+        <h3>F200 preuzima volan</h3>
+        <p>Vi kontrolišete priključak i uvratinu, mašina drži prohod u centimetar. Preklapanje pada na nulu.</p>
+      </div>
+      <div class="korak">
+        <div class="br">04</div>
+        <h3>Obuka i podrška</h3>
+        <p>Prolazimo kroz sve funkcije na vašoj parceli. Posle toga ostajemo dostupni za pitanja i servis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kalkulator">
+  <div class="wrap">
+    <div class="oznaka">Kalkulator</div>
+    <h2>Koliko vas preklapanje košta godišnje</h2>
+    <p class="uvod">Pomerite klizače na svoje brojke. Računica pretpostavlja da autopilot svodi preklapanje na oko 0,5%.</p>
+
+    <div class="kalk">
+      <div>
+        <div class="polje">
+          <label for="ha">Obradiva površina <b><span id="ha-v">200</span> ha</b></label>
+          <input type="range" id="ha" min="20" max="1500" step="10" value="200">
+        </div>
+        <div class="polje">
+          <label for="ops">Operacija godišnje po parceli <b><span id="ops-v">5</span></b></label>
+          <input type="range" id="ops" min="1" max="12" step="1" value="5">
+        </div>
+        <div class="polje">
+          <label for="trosak">Trošak po hektaru (gorivo + repromaterijal) <b><span id="trosak-v">70</span> €</b></label>
+          <input type="range" id="trosak" min="20" max="250" step="5" value="70">
+        </div>
+        <div class="polje">
+          <label for="prek">Preklapanje bez navigacije <b><span id="prek-v">8</span>%</b></label>
+          <input type="range" id="prek" min="2" max="20" step="1" value="8">
+        </div>
+        <div class="polje">
+          <label for="cena">Cena sistema <b><span id="cena-v">4.500</span> €</b></label>
+          <input type="range" id="cena" min="2000" max="12000" step="100" value="4500">
+        </div>
+      </div>
+
+      <div class="rezultat">
+        <div class="glavno" id="r-usteda">5.250 €</div>
+        <div class="glavno-k">Godišnja ušteda</div>
+        <hr>
+        <div class="red"><span>Obrađeno duplo</span><span id="r-dupli">80 ha</span></div>
+        <div class="red"><span>Ušteda po hektaru</span><span id="r-po-ha">26 €</span></div>
+        <div class="red"><span>Povraćaj ulaganja</span><span id="r-roi">10 meseci</span></div>
+        <hr>
+        <a href="#kontakt" class="btn btn-1" style="display:block;text-align:center">Pošalji upit za ponudu</a>
+        <p class="napomena">Procena, ne obavezujuća ponuda. Ne uključuje uštedu vremena, produžen radni dan i manje trošenje mašine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cena">
+  <div class="wrap">
+    <div class="oznaka">Ponuda</div>
+    <h2>U ceni nije samo uređaj</h2>
+
+    <!-- IZMENI: proveri da li akcijska cena i dalje važi -->
+    <div class="paket">
+      <div>
+        <div class="mono" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.5;margin-bottom:14px">Sveaverken F200</div>
+        <div class="cena">4.500 € <small>+ PDV · kompletan sistem</small></div>
+        <ul class="lista">
+          <li><b>Uređaj F200</b><em>Automatsko upravljanje sa ekranom osetljivim na dodir</em></li>
+          <li><b>RTK signal — 3 godine</b><em>Bez pretplate i dodatnih troškova</em></li>
+          <li><b>Unos 10 parcela</b><em>Parcele birate vi, unos je besplatan</em></li>
+          <li><b>Kompletna instalacija</b><em>Montažu obavljamo mi, uključena je u cenu</em></li>
+          <li><b>Obuka i podrška</b><em>Rukovanje prolazimo na terenu, ostajemo dostupni</em></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:19px">Vidite sistem pre kupovine</h3>
+        <p style="opacity:.75;font-size:15px;margin-top:12px">Ugradnje radimo sami i možemo vam pokazati sistem u radu — na traktoru, na parceli, u stvarnim uslovima. Ne na reklamnim fotografijama.</p>
+        <p style="opacity:.75;font-size:15px;margin-top:16px">Javite se sa podacima o traktoru i površini koju obrađujete, pa ćemo kroz razgovor proći kroz vaš konkretan slučaj — i reći otvoreno ako se ne isplati.</p>
+        <a href="#kontakt" class="btn btn-1" style="margin-top:26px">Zakaži demonstraciju</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pitanja">
+  <div class="wrap">
+    <div class="oznaka">Česta pitanja</div>
+    <h2>Ono što nas najviše pitaju</h2>
+
+    <div style="margin-top:40px">
+      <details open>
+        <summary>Da li može na stariji traktor?</summary>
+        <p>Da. Sistem je kompatibilan sa velikim brojem traktorskih marki i ne zahteva fabričku pripremu za automatsko upravljanje. Pošaljite marku i model, pa ćemo potvrditi.</p>
+      </details>
+      <details>
+        <summary>Šta se dešava posle tri godine RTK signala?</summary>
+        <p>Prve tri godine signal je uključen u cenu. Nakon toga se nastavak koristi po dogovoru — o uslovima vas obaveštavamo unapred, bez iznenađenja.</p>
+      </details>
+      <details>
+        <summary>Šta ako imam više od 10 parcela?</summary>
+        <p>Deset parcela ide besplatno uz licencu, po vašem izboru. Za dodatne parcele javite nam se — rešavamo dogovorom.</p>
+      </details>
+      <details>
+        <summary>Da li traktor vozi sam, bez vozača?</summary>
+        <p>Ne. Vozač je u kabini i nadzire rad. F200 preuzima volan i drži prohod, dok priključak, uvratinu i bezbednost kontroliše čovek.</p>
+      </details>
+      <details>
+        <summary>Koliko traje montaža?</summary>
+        <p>Montaža je brza i radimo je mi, uključujući kalibraciju i obuku na parceli. Termin dogovaramo tako da vam ne remeti radove.</p>
+      </details>
+      <details>
+        <summary>Isplati li se na manjim površinama?</summary>
+        <p>Zavisi od broja operacija i cene repromaterijala. Unesite svoje brojke u kalkulator za grubu procenu, a mi ćemo kroz razgovor izračunati tačnije.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap">
+    <div class="oznaka">Kontakt</div>
+    <h2>Dođite da vidite kako radi</h2>
+    <p class="uvod">Zakažite demonstraciju na terenu ili nas jednostavno pozovite. Odgovaramo na sva pitanja i pre nego što išta kupite.</p>
+
+    <div class="kontakt-grid">
+      <div class="kontakt-info">
+        <div class="blok">
+          <div class="k">Telefon</div>
+          <a href="tel:+381606553500">+381 60 655 3500</a>
+        </div>
+        <div class="blok">
+          <div class="k">E-mail</div>
+          <a href="mailto:pivnicki.zivko@gmail.com">pivnicki.zivko@gmail.com</a>
+        </div>
+        <div class="blok">
+          <div class="k">Lokacija</div>
+          <a href="#" style="font-size:16px">Bačka Topola, Srbija</a>
+        </div>
+        <div class="blok">
+          <div class="k">Facebook</div>
+          <a href="https://www.facebook.com/autopilotnavigacije/" target="_blank" rel="noopener" style="font-size:16px">/autopilotnavigacije</a>
+        </div>
+      </div>
+
+      <form action="https://api.web3forms.com/submit" method="POST" id="forma">
+        <input type="hidden" name="access_key" value="41d79890-1c9f-4611-b690-bd5ad1ccd8c1">
+        <input type="hidden" name="subject" value="Upit sa sajta — Sveaverken F200">
+        <input type="checkbox" name="botcheck" style="display:none">
+
+        <div class="polje-f">
+          <label for="ime">Ime i prezime</label>
+          <input type="text" id="ime" name="ime" required>
+        </div>
+        <div class="polje-f">
+          <label for="telefon">Telefon</label>
+          <input type="tel" id="telefon" name="telefon" required>
+        </div>
+        <div class="polje-f">
+          <label for="traktor">Traktor (marka i model)</label>
+          <input type="text" id="traktor" name="traktor" placeholder="npr. Deutz-Fahr 6140">
+        </div>
+        <div class="polje-f">
+          <label for="povrsina">Površina koju obrađujete (ha)</label>
+          <input type="text" id="povrsina" name="povrsina" placeholder="npr. 180">
+        </div>
+        <div class="polje-f">
+          <label for="poruka">Pitanje</label>
+          <textarea id="poruka" name="poruka" placeholder="npr. zanima me termin demonstracije i uslovi plaćanja"></textarea>
+        </div>
+        <button type="submit" class="btn btn-1">Pošalji upit</button>
+        <div class="status mono" id="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-in">
+    <span>© <span id="god">2026</span> Autopilot Navigacije · Bačka Topola · Sveaverken F200</span>
+    <span><a href="https://www.facebook.com/autopilotnavigacije/" target="_blank" rel="noopener">Facebook</a> · <a href="tel:+381606553500">Pozovi</a></span>
+  </div>
+</footer>
+
+<script>
+const el = function(id){ return document.getElementById(id); };
+const fmt = function(n){ return new Intl.NumberFormat('sr-RS',{maximumFractionDigits:0}).format(n); };
+
+function racunaj(){
+  const ha = +el('ha').value, ops = +el('ops').value;
+  const trosak = +el('trosak').value, prek = +el('prek').value, cena = +el('cena').value;
+
+  el('ha-v').textContent = fmt(ha);
+  el('ops-v').textContent = ops;
+  el('trosak-v').textContent = trosak;
+  el('prek-v').textContent = prek;
+  el('cena-v').textContent = fmt(cena);
+
+  const razlika = Math.max(prek - 0.5, 0) / 100;
+  const usteda = ha * ops * trosak * razlika;
+  const dupli = ha * (prek/100) * ops;
+  const poHa = ha ? usteda / ha : 0;
+  const meseci = usteda > 0 ? Math.round((cena / usteda) * 12) : 0;
+
+  el('r-usteda').textContent = fmt(usteda) + ' €';
+  el('r-dupli').textContent = fmt(dupli) + ' ha';
+  el('r-po-ha').textContent = fmt(poHa) + ' €';
+
+  let roi;
+  if(meseci === 0){ roi = '—'; }
+  else if(meseci <= 24){
+    const zadnja = meseci % 10, dvocifra = meseci % 100;
+    const rec = (zadnja === 1 && dvocifra !== 11) ? ' mesec'
+      : (zadnja >= 2 && zadnja <= 4 && (dvocifra < 12 || dvocifra > 14)) ? ' meseca' : ' meseci';
+    roi = meseci + rec;
+  } else {
+    roi = (meseci/12).toFixed(1).replace('.',',') + ' godina';
+  }
+  el('r-roi').textContent = roi;
+}
+['ha','ops','trosak','prek','cena'].forEach(function(id){ el(id).addEventListener('input', racunaj); });
+racunaj();
+
+const forma = document.getElementById('forma');
+const status = document.getElementById('status');
+forma.addEventListener('submit', function(e){
+  e.preventDefault();
+  status.textContent = 'Šaljem…';
+  fetch('https://api.web3forms.com/submit', {
+    method:'POST',
+    headers:{'Content-Type':'application/json', Accept:'application/json'},
+    body: JSON.stringify(Object.fromEntries(new FormData(forma)))
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    if(d.success){ status.textContent = 'Upit je poslat. Javljamo se u najkraćem roku.'; forma.reset(); }
+    else { status.textContent = 'Slanje nije uspelo. Pozovite nas telefonom.'; }
+  })
+  .catch(function(){ status.textContent = 'Slanje nije uspelo. Pozovite nas telefonom.'; });
+});
+
+document.getElementById('god').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
