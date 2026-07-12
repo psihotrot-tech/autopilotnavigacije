@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="sr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sveaverken F100 és F200 — automata kormányzás traktorokhoz | Topolya</title>
-<meta name="description" content="Sveaverken automata kormányzási rendszer traktorokhoz. F100 3.500 €-tól, F200 4.500 €-tól + ÁFA. ±2,5 cm RTK pontosság, ISOBUS, telepítés az árban. Topolya, Szerbia.">
-<meta name="keywords" content="Sveaverken F100, Sveaverken F200, automata kormányzás, GPS navigáció traktorhoz, RTK, precíziós gazdálkodás, auto steer, ISOBUS, Topolya, Vajdaság">
+<title>Sveaverken F100 i F200 — autopilot navigacija za traktore | Bačka Topola</title>
+<meta name="description" content="Sveaverken autopilot navigacija za traktore. F100 od 3.500 € i F200 od 4.500 € + PDV. RTK preciznost ±2,5 cm, ISOBUS, instalacija uključena. Bačka Topola, Srbija.">
+<meta name="keywords" content="Sveaverken F100, Sveaverken F200, autopilot navigacija, GPS navigacija za traktor, RTK, precizna poljoprivreda, auto steer, ISOBUS, Bačka Topola, Vojvodina">
 
 <meta property="og:type" content="website">
-<meta property="og:locale" content="hu_HU">
-<meta property="og:title" content="Sveaverken F100 és F200 — automata kormányzás traktorokhoz">
-<meta property="og:description" content="±2,5 cm RTK pontosság. A telepítés és az RTK jel az árban. F100 3.500 €-tól, F200 4.500 €-tól + ÁFA.">
+<meta property="og:locale" content="sr_RS">
+<meta property="og:title" content="Sveaverken F100 i F200 — autopilot navigacija za traktore">
+<meta property="og:description" content="RTK preciznost ±2,5 cm. Instalacija i RTK signal u ceni. F100 od 3.500 €, F200 od 4.500 € + PDV.">
 <!-- IZMENI: domen i og slika -->
 <meta property="og:url" content="https://autopilotnavigacije.com/">
 <meta name="theme-color" content="#171310">
-
-<link rel="alternate" hreflang="sr" href="./index.html">
-<link rel="alternate" hreflang="hu" href="./hu.html">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -183,9 +180,9 @@ form .btn-1{width:100%;border:none;cursor:pointer;font-family:'IBM Plex Sans',sa
 .racunica{margin-top:26px;padding:20px 24px;border-left:2px solid var(--rotaciono);background:rgba(23,19,16,.04);font-size:15px;max-width:70ch}
 
 .jezik{display:flex;border:1px solid var(--zemlja);margin-left:10px;flex:none}
-.jezik a{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;padding:9px 12px;text-decoration:none;opacity:.6;transition:background .2s,color .2s,opacity .2s}
-.jezik a:hover{opacity:1}
-.jezik a.aktivan{background:var(--zemlja);color:var(--slama);opacity:1}
+.jezik button{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;padding:9px 12px;background:none;border:none;color:inherit;cursor:pointer;opacity:.6;transition:background .2s,color .2s,opacity .2s}
+.jezik button:hover{opacity:1}
+.jezik button.aktivan{background:var(--zemlja);color:var(--slama);opacity:1}
 .footer-in{align-items:center}
 .adversa{display:flex;align-items:center;gap:7px;text-decoration:none;opacity:.75;transition:opacity .2s}
 .adversa:hover{opacity:1;color:var(--rotaciono)}
@@ -215,7 +212,7 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
   .logo .nis{width:18px;height:18px}
   .tel-btn{padding:9px 11px;font-size:12px}
   .jezik{margin-left:6px}
-  .jezik a{padding:8px 9px;font-size:12px}
+  .jezik button{padding:8px 9px;font-size:12px}
 }
 @media(max-width:380px){
   .logo{font-size:0;gap:0}
@@ -237,15 +234,15 @@ body{overflow-x:hidden}
       Autopilot Navigacije
     </a>
     <div class="nav-links">
-      <a href="#video">Videó</a>
-      <a href="#prednosti">Előnyök</a>
+      <a href="#video" data-hu="Videó">Video</a>
+      <a href="#prednosti" data-hu="Előnyök">Prednosti</a>
       <a href="#specifikacije">F200</a>
-      <a href="#kalkulator">Kalkulátor</a>
-      <a href="#cena">Ár</a>
+      <a href="#kalkulator" data-hu="Kalkulátor">Kalkulator</a>
+      <a href="#cena" data-hu="Ár">Cena</a>
       <a href="tel:+381606553500" class="tel-btn">060 655 3500</a>
       <div class="jezik">
-        <a href="index.html" hreflang="sr">SR</a>
-        <a href="hu.html" class="aktivan" hreflang="hu">HU</a>
+        <button type="button" id="btn-sr" class="aktivan" aria-pressed="true">SR</button>
+        <button type="button" id="btn-hu" aria-pressed="false">HU</button>
       </div>
     </div>
   </div>
@@ -255,32 +252,32 @@ body{overflow-x:hidden}
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="oznaka mono">Sveaverken F100 · F200 · Topolya</div>
-        <h1>Minden menet <em>pontosan ott</em>, ahol kell.</h1>
-        <p class="hero-lead">Sveaverken automata kormányzási rendszerek ±2,5 cm RTK pontossággal. Két modell — F100 3.500 €-tól és F200 4.500 €-tól. Az RTK jel, a parcellák bevitele és a teljes telepítés benne van az árban.</p>
+        <div class="oznaka mono" data-hu="Sveaverken F100 · F200 · Topolya">Sveaverken F100 · F200 · Bačka Topola</div>
+        <h1 data-hu="Minden menet &lt;em&gt;pontosan ott&lt;/em&gt;, ahol kell.">Svaki prohod tačno <em>tamo gde treba</em>.</h1>
+        <p class="hero-lead" data-hu="Sveaverken automata kormányzási rendszerek ±2,5 cm RTK pontossággal. Két modell — F100 3.500 €-tól és F200 4.500 €-tól. Az RTK jel, a parcellák bevitele és a teljes telepítés benne van az árban.">Sveaverken sistemi za automatsko upravljanje sa RTK preciznošću ±2,5 cm. Dva modela — F100 od 3.500 € i F200 od 4.500 €. RTK signal, unos parcela i kompletna instalacija ulaze u cenu.</p>
         <div class="hero-cta">
-          <a href="#kontakt" class="btn btn-1">Kérjen bemutatót</a>
-          <a href="#kalkulator" class="btn btn-2">Számolja ki a megtakarítást</a>
+          <a href="#kontakt" class="btn btn-1" data-hu="Kérjen bemutatót">Zakaži demonstraciju</a>
+          <a href="#kalkulator" class="btn btn-2" data-hu="Számolja ki a megtakarítást">Izračunaj uštedu</a>
         </div>
       </div>
 
       <div class="foto-box">
         <div class="foto-head">
-          <span>Sveaverken F200 · teljes készlet</span>
-          <span class="tag">Kormány · antenna · kijelző</span>
+          <span data-hu="Sveaverken F200 · teljes készlet">Sveaverken F200 · kompletan set</span>
+          <span class="tag" data-hu="Kormány · antenna · kijelző">Volan · antena · ekran</span>
         </div>
-        <img src="slika.jpg" alt="Sveaverken F200 — kormány motorral az automata kormányzáshoz, RTK antenna és érintőkijelző" loading="eager" width="1080" height="722">
-        <div class="foto-potpis">Sveaverken F200 — kormány motorral, RTK antenna és érintőkijelző. A telepítés benne van az árban.</div>
+        <img src="slika.jpg" alt="Sveaverken F200 — volan sa motorom za automatsko upravljanje, RTK antena i ekran osetljiv na dodir" data-hu-alt="Sveaverken F200 — kormány motorral, RTK antenna és érintőkijelző" loading="eager" width="1080" height="722">
+        <div class="foto-potpis" data-hu="Sveaverken F200 — kormány motorral, RTK antenna és érintőkijelző. A telepítés benne van az árban.">Sveaverken F200 — volan sa motorom, RTK antena i ekran na dodir. Instalacija ulazi u cenu.</div>
       </div>
     </div>
 
     <div class="traka">
       <div class="wrap" style="padding:0">
         <div class="traka-in">
-          <div><div class="v">±2,5 cm</div><div class="k">RTK pontosság</div></div>
-          <div><div class="v">3.500 €-tól</div><div class="k">+ ÁFA, telepítéssel</div></div>
-          <div><div class="v">10 parcella</div><div class="k">A bevitel az árban</div></div>
-          <div><div class="v">ISOBUS</div><div class="k">Kompatibilitás</div></div>
+          <div data-hu="&lt;div class=&quot;v&quot;&gt;±2,5 cm&lt;/div&gt;&lt;div class=&quot;k&quot;&gt;RTK pontosság&lt;/div&gt;"><div class="v">±2,5 cm</div><div class="k">RTK preciznost</div></div>
+          <div data-hu="&lt;div class=&quot;v&quot;&gt;3.500 €-tól&lt;/div&gt;&lt;div class=&quot;k&quot;&gt;+ ÁFA, telepítéssel&lt;/div&gt;"><div class="v">od 3.500 €</div><div class="k">+ PDV, instalacija u ceni</div></div>
+          <div data-hu="&lt;div class=&quot;v&quot;&gt;10 parcella&lt;/div&gt;&lt;div class=&quot;k&quot;&gt;A bevitel az árban&lt;/div&gt;"><div class="v">10 parcela</div><div class="k">Unos uključen u cenu</div></div>
+          <div data-hu="&lt;div class=&quot;v&quot;&gt;ISOBUS&lt;/div&gt;&lt;div class=&quot;k&quot;&gt;Kompatibilitás&lt;/div&gt;"><div class="v">ISOBUS</div><div class="k">Kompatibilnost</div></div>
         </div>
       </div>
     </div>
@@ -296,17 +293,17 @@ body{overflow-x:hidden}
             src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1541144203415324&show_text=false&width=360&height=640&t=0"
             scrolling="no" frameborder="0" allowfullscreen="true" loading="lazy"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            title="Sveaverken F200 beszerelés — felvétel a terepről"></iframe>
+            title="Ugradnja Sveaverken F200 — snimak sa terena"></iframe>
         </div>
-        <a class="video-fb" href="https://www.facebook.com/reel/1541144203415324" target="_blank" rel="noopener">Megnyitás Facebookon &rarr;</a>
+        <a class="video-fb" href="https://www.facebook.com/reel/1541144203415324" target="_blank" rel="noopener" data-hu="Megnyitás Facebookon &amp;rarr;">Otvori na Facebooku &rarr;</a>
       </div>
 
       <div class="video-tekst">
-        <div class="oznaka">A terepről</div>
-        <h2>A saját telepítéseink, nem reklámfotók</h2>
-        <p class="uvod">Így néz ki a rendszer valós körülmények között — traktoron, a földön, a saját beszerelésünk után.</p>
-        <p class="citat">Mennyivel lenne könnyebb a munka, ha a traktor minden egyes menetnél pontosan ott haladna, ahol kell?</p>
-        <a href="#kontakt" class="btn btn-1" style="margin-top:30px">Kérjen bemutatót</a>
+        <div class="oznaka" data-hu="A terepről">Sa terena</div>
+        <h2 data-hu="A saját telepítéseink, nem reklámfotók">Naše ugradnje, ne reklamne fotografije</h2>
+        <p class="uvod" data-hu="Így néz ki a rendszer valós körülmények között — traktoron, a földön, a saját beszerelésünk után.">Ovako sistem izgleda u stvarnim uslovima — na traktoru, na njivi, posle ugradnje koju smo sami odradili.</p>
+        <p class="citat" data-hu="Mennyivel lenne könnyebb a munka, ha a traktor minden egyes menetnél pontosan ott haladna, ahol kell?">Koliko bi posao bio lakši kada bi traktor u svakom prolazu išao tačno tamo gde treba?</p>
+        <a href="#kontakt" class="btn btn-1" style="margin-top:30px" data-hu="Kérjen bemutatót">Zakaži demonstraciju</a>
       </div>
     </div>
   </div>
@@ -314,40 +311,40 @@ body{overflow-x:hidden}
 
 <section id="prednosti">
   <div class="wrap">
-    <div class="oznaka">Miért Sveaverken</div>
-    <h2>Az átfedés olyan költség, amit minden szezonban kifizet</h2>
-    <p class="uvod">Aki egész nap szemmel tartja a nyomvonalat, menetenként 15–25 cm-t fed át. 200 hektáron és évi öt munkaműveletnél ez üzemanyag, vetőmag, műtrágya és vegyszer, ami kétszer kerül ugyanabba a földbe.</p>
+    <div class="oznaka" data-hu="Miért Sveaverken">Zašto F200</div>
+    <h2 data-hu="Az átfedés olyan költség, amit minden szezonban kifizet">Preklapanje je trošak koji plaćate svake sezone</h2>
+    <p class="uvod" data-hu="Aki egész nap szemmel tartja a nyomvonalat, menetenként 15–25 cm-t fed át. 200 hektáron és évi öt munkaműveletnél ez üzemanyag, vetőmag, műtrágya és vegyszer, ami kétszer kerül ugyanabba a földbe.">Ko ceo dan drži liniju na oko, preklapa 15–25 cm po prohodu. Na 200 hektara i pet operacija godišnje, to su gorivo, seme, đubrivo i hemija koji dvaput odu u istu zemlju.</p>
 
     <div class="karte">
       <div class="karta">
         <svg viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg>
-        <h3>Centiméteres pontosság</h3>
-        <p>Az RTK korrekció 2,5 cm-en belül tartja a gépet. Ez a különbség a navigáció között, ami csak segít, és az automata kormányzás között, ami Ön helyett tartja a nyomvonalat.</p>
+        <h3 data-hu="Centiméteres pontosság">Tačnost u centimetar</h3>
+        <p data-hu="Az RTK korrekció 2,5 cm-en belül tartja a gépet. Ez a különbség a navigáció között, ami csak segít, és az automata kormányzás között, ami Ön helyett tartja a nyomvonalat.">RTK korekcija drži mašinu u granici od 2,5 cm. To je razlika između navigacije koja samo pomaže i autopilota koji drži liniju umesto vas.</p>
       </div>
       <div class="karta">
         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M8 21h8"/></svg>
-        <h3>Egyszerű kezelés</h3>
-        <p>Nagyméretű érintőkijelző és átlátható menü. A betanítás rövid — a rendszer munkára készült, nem tanulásra.</p>
+        <h3 data-hu="Egyszerű kezelés">Jednostavno rukovanje</h3>
+        <p data-hu="Nagyméretű érintőkijelző és átlátható menü. A betanítás rövid — a rendszer munkára készült, nem tanulásra.">Veliki ekran na dodir i pregledan meni. Obuka je kratka — sistem je pravljen da se radi na njemu, a ne da se uči.</p>
       </div>
       <div class="karta">
         <svg viewBox="0 0 24 24"><path d="M4 15a4 4 0 013-6.8 5 5 0 019.6-1A4 4 0 0119 15z"/><path d="M8 19h8"/></svg>
-        <h3>Megbízható minden körülmények között</h3>
-        <p>Dolgozik éjszaka, porban és ködben, síkon és nehezebb terepen is. A nyomvonal nyomvonal marad, látási viszonyoktól függetlenül.</p>
+        <h3 data-hu="Megbízható minden körülmények között">Pouzdano u svakim uslovima</h3>
+        <p data-hu="Dolgozik éjszaka, porban és ködben, síkon és nehezebb terepen is. A nyomvonal nyomvonal marad, látási viszonyoktól függetlenül.">Radi noću, u prašini i magli, na ravnici i na težem terenu. Linija ostaje linija bez obzira na vidljivost.</p>
       </div>
       <div class="karta">
         <svg viewBox="0 0 24 24"><path d="M3 20h18M6 20V9l6-5 6 5v11"/></svg>
-        <h3>Kevesebb vetőmag, műtrágya és üzemanyag</h3>
-        <p>Nincs dupla menet és nincs kihagyott sáv. Pontosan annyi fogy, amennyit a tábla kíván, egy grammal sem több.</p>
+        <h3 data-hu="Kevesebb vetőmag, műtrágya és üzemanyag">Manje semena, đubriva i goriva</h3>
+        <p data-hu="Nincs dupla menet és nincs kihagyott sáv. Pontosan annyi fogy, amennyit a tábla kíván, egy grammal sem több.">Nema duplog prolaza i nema propuštenih traka. Troši se tačno onoliko koliko njiva traži, ni gram više.</p>
       </div>
       <div class="karta">
         <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        <h3>Tíz parcella az árban</h3>
-        <p>Az Ön által kiválasztott parcellák elmentve maradnak. A következő szezonban csak kiválasztja a listából, és folytatja ott, ahol abbahagyta.</p>
+        <h3 data-hu="Tíz parcella az árban">Deset parcela u ceni</h3>
+        <p data-hu="Az Ön által kiválasztott parcellák elmentve maradnak. A következő szezonban csak kiválasztja a listából, és folytatja ott, ahol abbahagyta.">Parcele koje sami izaberete ostaju upamćene. Sledeće sezone samo izaberete njivu sa spiska i nastavite gde ste stali.</p>
       </div>
       <div class="karta">
         <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18"/></svg>
-        <h3>RTK jel az árban</h3>
-        <p>Egy év az F100-hoz, három év az F200-hoz. Ebben az időszakban előfizetés és rejtett költség nélkül.</p>
+        <h3 data-hu="RTK jel az árban">RTK signal u ceni</h3>
+        <p data-hu="Egy év az F100-hoz, három év az F200-hoz. Ebben az időszakban előfizetés és rejtett költség nélkül.">Godinu dana uz F100, tri godine uz F200. Bez pretplate i bez skrivenih troškova u tom periodu.</p>
       </div>
     </div>
   </div>
@@ -356,30 +353,30 @@ body{overflow-x:hidden}
 <section id="specifikacije">
   <div class="wrap">
     <div class="oznaka">Sveaverken F100 · F200</div>
-    <h2>Mit tud a készülék</h2>
-    <p class="uvod">Automata kormányzás vetéshez, permetezéshez, műtrágyázáshoz, talajmunkához és egyéb munkákhoz — számos traktormárkán.</p>
+    <h2 data-hu="Mit tud a készülék">Šta uređaj radi</h2>
+    <p class="uvod" data-hu="Automata kormányzás vetéshez, permetezéshez, műtrágyázáshoz, talajmunkához és egyéb munkákhoz — számos traktormárkán.">Automatsko upravljanje za setvu, prskanje, đubrenje, obradu i ostale radove — na traktorima velikog broja marki.</p>
 
     <!-- IZMENI: dopuni tehničkim podacima iz zvanične dokumentacije ako imaš -->
     <div class="spec">
       <div>
-        <div class="spec-red"><span>Pontosság</span><span>±2,5 cm RTK jellel</span></div>
-        <div class="spec-red"><span>Kormányzás</span><span>Automata, elektromotor a kormányon</span></div>
-        <div class="spec-red"><span>Kijelző</span><span>Nagyméretű, érintőképernyős</span></div>
-        <div class="spec-red"><span>Vonalak</span><span>A-B, ívek, tábla kontúrja</span></div>
+        <div class="spec-red" data-hu="&lt;span&gt;Pontosság&lt;/span&gt;&lt;span&gt;±2,5 cm RTK jellel&lt;/span&gt;"><span>Preciznost</span><span>±2,5 cm uz RTK signal</span></div>
+        <div class="spec-red" data-hu="&lt;span&gt;Kormányzás&lt;/span&gt;&lt;span&gt;Automata, elektromotor a kormányon&lt;/span&gt;"><span>Upravljanje</span><span>Automatsko, elektromotor na volanu</span></div>
+        <div class="spec-red" data-hu="&lt;span&gt;Kijelző&lt;/span&gt;&lt;span&gt;Nagyméretű, érintőképernyős&lt;/span&gt;"><span>Ekran</span><span>Veliki format, osetljiv na dodir</span></div>
+        <div class="spec-red" data-hu="&lt;span&gt;Vonalak&lt;/span&gt;&lt;span&gt;A-B, ívek, tábla kontúrja&lt;/span&gt;"><span>Linije</span><span>A-B, krive, konture parcele</span></div>
       </div>
       <div>
-        <div class="spec-red"><span>Csatlakozás</span><span>ISOBUS kompatibilitás</span></div>
-        <div class="spec-red"><span>Parcellák</span><span>10 parcella, a bevitel ingyenes</span></div>
-        <div class="spec-red"><span>Alkalmazás</span><span>Vetés, permetezés, műtrágyázás, talajmunka</span></div>
-        <div class="spec-red"><span>Beszerelés</span><span>Gyors, mi végezzük</span></div>
+        <div class="spec-red" data-hu="&lt;span&gt;Csatlakozás&lt;/span&gt;&lt;span&gt;ISOBUS kompatibilitás&lt;/span&gt;"><span>Povezivanje</span><span>ISOBUS kompatibilnost</span></div>
+        <div class="spec-red" data-hu="&lt;span&gt;Parcellák&lt;/span&gt;&lt;span&gt;10 parcella, a bevitel ingyenes&lt;/span&gt;"><span>Parcele</span><span>10 parcela, unos besplatan</span></div>
+        <div class="spec-red" data-hu="&lt;span&gt;Alkalmazás&lt;/span&gt;&lt;span&gt;Vetés, permetezés, műtrágyázás, talajmunka&lt;/span&gt;"><span>Primena</span><span>Setva, prskanje, đubrenje, obrada</span></div>
+        <div class="spec-red" data-hu="&lt;span&gt;Beszerelés&lt;/span&gt;&lt;span&gt;Gyors, mi végezzük&lt;/span&gt;"><span>Ugradnja</span><span>Brza, radimo je mi</span></div>
       </div>
     </div>
 
     <div style="margin-top:44px">
-      <div class="oznaka">Munkagépek</div>
+      <div class="oznaka" data-hu="Munkagépek">Priključne mašine</div>
       <div class="masine">
-        <span>Traktorok</span><span>Vetőgépek</span><span>Permetezők</span><span>Műtrágyaszórók</span>
-        <span>Kultivátorok</span><span>Ekék</span><span>Tárcsák</span><span>Kombájnok</span>
+        <span data-hu="Traktorok">Traktori</span><span data-hu="Vetőgépek">Sejalice</span><span data-hu="Permetezők">Prskalice</span><span data-hu="Műtrágyaszórók">Rasipači</span>
+        <span data-hu="Kultivátorok">Kultivatori</span><span data-hu="Ekék">Plugovi</span><span data-hu="Tárcsák">Tanjirače</span><span data-hu="Kombájnok">Kombajni</span>
       </div>
     </div>
   </div>
@@ -387,29 +384,29 @@ body{overflow-x:hidden}
 
 <section id="kako">
   <div class="wrap">
-    <div class="oznaka">Az érkezéstől az első barázdáig</div>
-    <h2>Hogyan néz ki a gyakorlatban</h2>
+    <div class="oznaka" data-hu="Az érkezéstől az első barázdáig">Od dolaska do prve brazde</div>
+    <h2 data-hu="Hogyan néz ki a gyakorlatban">Kako to izgleda u praksi</h2>
 
     <div class="koraci">
       <div class="korak">
         <div class="br">01</div>
-        <h3>Beszerelés az Ön traktorára</h3>
-        <p>A beszerelést mi végezzük — készülék, antenna, kijelző és kalibrálás. Minden egy helyen, nem küldjük tovább senkihez.</p>
+        <h3 data-hu="Beszerelés az Ön traktorára">Ugradnja na vaš traktor</h3>
+        <p data-hu="A beszerelést mi végezzük — készülék, antenna, kijelző és kalibrálás. Minden egy helyen, nem küldjük tovább senkihez.">Ugradnju radimo mi — uređaj, antena, ekran i kalibracija. Sve na jednom mestu, ne šaljemo vas nikom drugom.</p>
       </div>
       <div class="korak">
         <div class="br">02</div>
-        <h3>Parcellák bevitele</h3>
-        <p>Tíz parcellát az Ön választása szerint ingyen viszünk be — egy évre az F100-nál, három évre az F200-nál. A határok, mezsgyék és A-B vonalak elmentve maradnak.</p>
+        <h3 data-hu="Parcellák bevitele">Unos parcela</h3>
+        <p data-hu="Tíz parcellát az Ön választása szerint ingyen viszünk be — egy évre az F100-nál, három évre az F200-nál. A határok, mezsgyék és A-B vonalak elmentve maradnak.">Deset njiva po vašem izboru unosimo besplatno — na godinu dana uz F100, na tri godine uz F200. Granice, međe i A-B linije ostaju upamćene.</p>
       </div>
       <div class="korak">
         <div class="br">03</div>
-        <h3>A rendszer átveszi a kormányt</h3>
-        <p>Ön a munkagépre és a fordulóra figyel, a gép centiméterre tartja a nyomvonalat. Az átfedés nullára esik.</p>
+        <h3 data-hu="A rendszer átveszi a kormányt">Sistem preuzima volan</h3>
+        <p data-hu="Ön a munkagépre és a fordulóra figyel, a gép centiméterre tartja a nyomvonalat. Az átfedés nullára esik.">Vi vodite računa o priključku i uvratini, mašina drži prohod u centimetar. Preklapanje pada na nulu.</p>
       </div>
       <div class="korak">
         <div class="br">04</div>
-        <h3>Betanítás és támogatás</h3>
-        <p>Az összes funkciót végigvesszük Önnel a táblán. Utána is elérhetők maradunk kérdésekre és szervizre.</p>
+        <h3 data-hu="Betanítás és támogatás">Obuka i podrška</h3>
+        <p data-hu="Az összes funkciót végigvesszük Önnel a táblán. Utána is elérhetők maradunk kérdésekre és szervizre.">Sve funkcije prolazimo sa vama na njivi. Posle toga ostajemo dostupni za pitanja i servis.</p>
       </div>
     </div>
   </div>
@@ -417,44 +414,44 @@ body{overflow-x:hidden}
 
 <section id="kalkulator">
   <div class="wrap">
-    <div class="oznaka">Kalkulátor</div>
-    <h2>Mennyibe kerül évente az átfedés</h2>
-    <p class="uvod">Állítsa a csúszkákat a saját számaira. A számítás azzal számol, hogy az automata kormányzás kb. 0,5%-ra csökkenti az átfedést.</p>
+    <div class="oznaka" data-hu="Kalkulátor">Kalkulator</div>
+    <h2 data-hu="Mennyibe kerül évente az átfedés">Koliko vas preklapanje košta godišnje</h2>
+    <p class="uvod" data-hu="Állítsa a csúszkákat a saját számaira. A számítás azzal számol, hogy az automata kormányzás kb. 0,5%-ra csökkenti az átfedést.">Podesite klizače prema svojim brojkama. Računica polazi od toga da autopilot spušta preklapanje na oko 0,5%.</p>
 
     <div class="kalk">
       <div>
         <div class="polje">
-          <label for="ha">Megművelt terület <b><span id="ha-v">200</span> ha</b></label>
+          <label for="ha" data-hu="Megművelt terület &lt;b&gt;&lt;span id=&quot;ha-v&quot;&gt;200&lt;/span&gt; ha&lt;/b&gt;">Obradiva površina <b><span id="ha-v">200</span> ha</b></label>
           <input type="range" id="ha" min="20" max="1500" step="10" value="200">
         </div>
         <div class="polje">
-          <label for="ops">Munkaművelet évente parcellánként <b><span id="ops-v">5</span></b></label>
+          <label for="ops" data-hu="Munkaművelet évente parcellánként &lt;b&gt;&lt;span id=&quot;ops-v&quot;&gt;5&lt;/span&gt;&lt;/b&gt;">Operacija godišnje po parceli <b><span id="ops-v">5</span></b></label>
           <input type="range" id="ops" min="1" max="12" step="1" value="5">
         </div>
         <div class="polje">
-          <label for="trosak">Költség hektáronként (üzemanyag és inputanyag) <b><span id="trosak-v">70</span> €</b></label>
+          <label for="trosak" data-hu="Költség hektáronként (üzemanyag és inputanyag) &lt;b&gt;&lt;span id=&quot;trosak-v&quot;&gt;70&lt;/span&gt; €&lt;/b&gt;">Trošak po hektaru (gorivo i repromaterijal) <b><span id="trosak-v">70</span> €</b></label>
           <input type="range" id="trosak" min="20" max="250" step="5" value="70">
         </div>
         <div class="polje">
-          <label for="prek">Átfedés navigáció nélkül <b><span id="prek-v">8</span>%</b></label>
+          <label for="prek" data-hu="Átfedés navigáció nélkül &lt;b&gt;&lt;span id=&quot;prek-v&quot;&gt;8&lt;/span&gt;%&lt;/b&gt;">Preklapanje bez navigacije <b><span id="prek-v">8</span>%</b></label>
           <input type="range" id="prek" min="2" max="20" step="1" value="8">
         </div>
         <div class="polje">
-          <label for="cena">A rendszer ára <b><span id="cena-v">4.500</span> €</b></label>
+          <label for="cena" data-hu="A rendszer ára &lt;b&gt;&lt;span id=&quot;cena-v&quot;&gt;4.500&lt;/span&gt; €&lt;/b&gt;">Cena sistema <b><span id="cena-v">4.500</span> €</b></label>
           <input type="range" id="cena" min="3000" max="8000" step="100" value="4500">
         </div>
       </div>
 
       <div class="rezultat">
         <div class="glavno" id="r-usteda">5.250 €</div>
-        <div class="glavno-k">Éves megtakarítás</div>
+        <div class="glavno-k" data-hu="Éves megtakarítás">Godišnja ušteda</div>
         <hr>
-        <div class="red"><span>Duplán megművelve</span><span id="r-dupli">80 ha</span></div>
-        <div class="red"><span>Megtakarítás hektáronként</span><span id="r-po-ha">26 €</span></div>
-        <div class="red"><span>Megtérülés</span><span id="r-roi">10 hónap</span></div>
+        <div class="red" data-hu="&lt;span&gt;Duplán megművelve&lt;/span&gt;&lt;span id=&quot;r-dupli&quot;&gt;80 ha&lt;/span&gt;"><span>Duplo obrađeno</span><span id="r-dupli">80 ha</span></div>
+        <div class="red" data-hu="&lt;span&gt;Megtakarítás hektáronként&lt;/span&gt;&lt;span id=&quot;r-po-ha&quot;&gt;26 €&lt;/span&gt;"><span>Ušteda po hektaru</span><span id="r-po-ha">26 €</span></div>
+        <div class="red" data-hu="&lt;span&gt;Megtérülés&lt;/span&gt;&lt;span id=&quot;r-roi&quot;&gt;10 hónap&lt;/span&gt;"><span>Povrat ulaganja</span><span id="r-roi">10 meseci</span></div>
         <hr>
-        <a href="#kontakt" class="btn btn-1" style="display:block;text-align:center">Kérjen ajánlatot</a>
-        <p class="napomena">Ez becslés, nem kötelező érvényű ajánlat. Nem tartalmazza az időmegtakarítást, a hosszabb munkanapot és a gép kisebb kopását.</p>
+        <a href="#kontakt" class="btn btn-1" style="display:block;text-align:center" data-hu="Kérjen ajánlatot">Pošalji upit za ponudu</a>
+        <p class="napomena" data-hu="Ez becslés, nem kötelező érvényű ajánlat. Nem tartalmazza az időmegtakarítást, a hosszabb munkanapot és a gép kisebb kopását.">Ovo je procena, a ne obavezujuća ponuda. U računicu nisu ušli ušteda vremena, duži radni dan i manje trošenje mašine.</p>
       </div>
     </div>
   </div>
@@ -462,40 +459,40 @@ body{overflow-x:hidden}
 
 <section id="cena">
   <div class="wrap">
-    <div class="oznaka">Ajánlat</div>
-    <h2>Két modell, mindkét árban benne a telepítés</h2>
-    <p class="uvod">A különbség nem a pontosságban van — mindkét rendszer ±2,5 cm-t tart. A különbség az, hogy meddig jár az RTK jel és a parcellák felár nélkül.</p>
+    <div class="oznaka" data-hu="Ajánlat">Ponuda</div>
+    <h2 data-hu="Két modell, mindkét árban benne a telepítés">Dva modela, u obe cene ulazi instalacija</h2>
+    <p class="uvod" data-hu="A különbség nem a pontosságban van — mindkét rendszer ±2,5 cm-t tart. A különbség az, hogy meddig jár az RTK jel és a parcellák felár nélkül.">Razlika nije u preciznosti — oba sistema drže ±2,5 cm. Razlika je u tome koliko dugo RTK signal i parcele idu bez doplate.</p>
 
     <div class="paket">
       <div>
         <div class="model-oznaka">Sveaverken F100</div>
-        <div class="cena">3.500 € <small>+ ÁFA · telepítéssel</small></div>
+        <div class="cena" data-hu="3.500 € &lt;small&gt;+ ÁFA · telepítéssel&lt;/small&gt;">3.500 € <small>+ PDV · sa instalacijom</small></div>
         <ul class="lista">
-          <li><b>RTK jel — 1 év</b><em>Felár nélkül az első évben</em></li>
-          <li><b>10 parcella — 1 év</b><em>A parcellákat Ön választja, a bevitel ingyenes</em></li>
-          <li><b>Teljes telepítés</b><em>A beszerelést mi végezzük</em></li>
+          <li data-hu="&lt;b&gt;RTK jel — 1 év&lt;/b&gt;&lt;em&gt;Felár nélkül az első évben&lt;/em&gt;"><b>RTK signal — 1 godina</b><em>Bez doplate u prvoj godini</em></li>
+          <li data-hu="&lt;b&gt;10 parcella — 1 év&lt;/b&gt;&lt;em&gt;A parcellákat Ön választja, a bevitel ingyenes&lt;/em&gt;"><b>10 parcela — 1 godina</b><em>Parcele birate vi, unos je besplatan</em></li>
+          <li><b>Kompletna instalacija</b><em>Montažu obavljamo mi</em></li>
         </ul>
-        <a href="#kontakt" class="btn btn-2 btn-tamni">Érdeklődés: F100</a>
+        <a href="#kontakt" class="btn btn-2 btn-tamni" data-hu="Érdeklődés: F100">Pitaj za F100</a>
       </div>
       <div class="istaknut">
-        <div class="model-oznaka">Sveaverken F200 <span class="plamen">Új generáció</span></div>
-        <div class="cena">4.500 € <small>+ ÁFA · telepítéssel</small></div>
+        <div class="model-oznaka">Sveaverken F200 <span class="plamen" data-hu="Új generáció">Nova generacija</span></div>
+        <div class="cena" data-hu="4.500 € &lt;small&gt;+ ÁFA · telepítéssel&lt;/small&gt;">4.500 € <small>+ PDV · sa instalacijom</small></div>
         <ul class="lista">
-          <li><b>RTK jel — 3 év</b><em>Három szezon felár nélkül</em></li>
-          <li><b>10 parcella — 3 év</b><em>A parcellákat Ön választja, a bevitel ingyenes</em></li>
-          <li><b>Teljes telepítés</b><em>A beszerelést mi végezzük</em></li>
+          <li data-hu="&lt;b&gt;RTK jel — 3 év&lt;/b&gt;&lt;em&gt;Három szezon felár nélkül&lt;/em&gt;"><b>RTK signal — 3 godine</b><em>Tri sezone bez doplate</em></li>
+          <li data-hu="&lt;b&gt;10 parcella — 3 év&lt;/b&gt;&lt;em&gt;A parcellákat Ön választja, a bevitel ingyenes&lt;/em&gt;"><b>10 parcela — 3 godine</b><em>Parcele birate vi, unos je besplatan</em></li>
+          <li><b>Kompletna instalacija</b><em>Montažu obavljamo mi</em></li>
         </ul>
-        <a href="#kontakt" class="btn btn-1">Érdeklődés: F200</a>
+        <a href="#kontakt" class="btn btn-1" data-hu="Érdeklődés: F200">Pitaj za F200</a>
       </div>
     </div>
 
-    <p class="racunica">Az árkülönbség 1.000 €, az F200 viszont két évvel több RTK jelet ad. Ha két szezonnál tovább használja a rendszert — márpedig úgy lesz — az F200 az olcsóbb választás.</p>
+    <p class="racunica" data-hu="Az árkülönbség 1.000 €, az F200 viszont két évvel több RTK jelet ad. Ha két szezonnál tovább használja a rendszert — márpedig úgy lesz — az F200 az olcsóbb választás.">Razlika u ceni je 1.000 €, a F200 nosi dve godine RTK signala više. Ako sistem držite duže od dve sezone — a držaćete ga — F200 je jeftiniji izbor.</p>
 
     <div style="margin-top:56px">
-      <div class="oznaka">Amit mindkét modell tud</div>
+      <div class="oznaka" data-hu="Amit mindkét modell tud">Šta oba modela imaju</div>
       <div class="masine">
-        <span>±2,5 cm RTK</span><span>ISOBUS</span><span>Érintőkijelző</span><span>A-B vonalak</span>
-        <span>Ívek és kontúrok</span><span>Munka éjjel és ködben</span><span>Betanítás a terepen</span>
+        <span>±2,5 cm RTK</span><span>ISOBUS</span><span data-hu="Érintőkijelző">Ekran na dodir</span><span data-hu="A-B vonalak">A-B linije</span>
+        <span data-hu="Ívek és kontúrok">Krive i konture</span><span data-hu="Munka éjjel és ködben">Rad noću i u magli</span><span data-hu="Betanítás a terepen">Obuka na terenu</span>
       </div>
     </div>
   </div>
@@ -503,37 +500,37 @@ body{overflow-x:hidden}
 
 <section id="pitanja">
   <div class="wrap">
-    <div class="oznaka">Gyakori kérdések</div>
-    <h2>Amit a leggyakrabban kérdeznek</h2>
+    <div class="oznaka" data-hu="Gyakori kérdések">Česta pitanja</div>
+    <h2 data-hu="Amit a leggyakrabban kérdeznek">Ono što nas najviše pitaju</h2>
 
     <div style="margin-top:40px">
       <details open>
-        <summary>Régebbi traktorra is felszerelhető?</summary>
-        <p>Igen. A rendszer számos traktormárkával kompatibilis, és nem igényel gyári előkészítést az automata kormányzáshoz. Küldje el a márkát és a típust, és megerősítjük.</p>
+        <summary data-hu="Régebbi traktorra is felszerelhető?">Da li može na stariji traktor?</summary>
+        <p data-hu="Igen. A rendszer számos traktormárkával kompatibilis, és nem igényel gyári előkészítést az automata kormányzáshoz. Küldje el a márkát és a típust, és megerősítjük.">Da. Sistem je kompatibilan sa velikim brojem traktorskih marki i ne zahteva fabričku pripremu za automatsko upravljanje. Pošaljite marku i model, pa ćemo potvrditi.</p>
       </details>
       <details>
-        <summary>Mi a különbség az F100 és az F200 között?</summary>
-        <p>A pontosság ugyanaz — mindkettő ±2,5 cm-t tart. A különbség az időtartam: az F100-hoz egy évre, az F200-hoz három évre jár az RTK jel és a parcellák. Az F200 az újabb generáció.</p>
+        <summary data-hu="Mi a különbség az F100 és az F200 között?">Koja je razlika između F100 i F200?</summary>
+        <p data-hu="A pontosság ugyanaz — mindkettő ±2,5 cm-t tart. A különbség az időtartam: az F100-hoz egy évre, az F200-hoz három évre jár az RTK jel és a parcellák. Az F200 az újabb generáció.">Preciznost je ista — oba drže ±2,5 cm. Razlika je u trajanju: uz F100 dobijate RTK signal i parcele na godinu dana, uz F200 na tri godine. F200 je novija generacija.</p>
       </details>
       <details>
-        <summary>Mi történik, ha lejár a csomagban lévő RTK jel?</summary>
-        <p>A lejárat után — egy év az F100-nál, három év az F200-nál — a jel megállapodás szerint hosszabbítható. A feltételeket előre elmondjuk, meglepetés nélkül.</p>
+        <summary data-hu="Mi történik, ha lejár a csomagban lévő RTK jel?">Šta se dešava kad istekne RTK signal iz paketa?</summary>
+        <p data-hu="A lejárat után — egy év az F100-nál, három év az F200-nál — a jel megállapodás szerint hosszabbítható. A feltételeket előre elmondjuk, meglepetés nélkül.">Kad istekne — posle godinu dana kod F100, odnosno tri godine kod F200 — signal se produžava po dogovoru. Uslove kažemo unapred, bez iznenađenja.</p>
       </details>
       <details>
-        <summary>Mi van, ha tíznél több parcellám van?</summary>
-        <p>Tíz parcella mindkét modellhez ingyen jár, az Ön választása szerint. További parcellákért keressen minket — megállapodunk.</p>
+        <summary data-hu="Mi van, ha tíznél több parcellám van?">Šta ako imam više od 10 parcela?</summary>
+        <p data-hu="Tíz parcella mindkét modellhez ingyen jár, az Ön választása szerint. További parcellákért keressen minket — megállapodunk.">Deset parcela ide besplatno uz oba modela, po vašem izboru. Za dodatne parcele javite nam se — rešavamo dogovorom.</p>
       </details>
       <details>
-        <summary>A traktor vezető nélkül megy?</summary>
-        <p>Nem. A vezető a fülkében van és felügyeli a munkát. A rendszer átveszi a kormányt és tartja a nyomvonalat, de a munkagépet, a fordulót és a biztonságot ember irányítja.</p>
+        <summary data-hu="A traktor vezető nélkül megy?">Da li traktor vozi sam, bez vozača?</summary>
+        <p data-hu="Nem. A vezető a fülkében van és felügyeli a munkát. A rendszer átveszi a kormányt és tartja a nyomvonalat, de a munkagépet, a fordulót és a biztonságot ember irányítja.">Ne. Vozač je u kabini i nadzire rad. Sistem preuzima volan i drži prohod, dok priključak, uvratinu i bezbednost kontroliše čovek.</p>
       </details>
       <details>
-        <summary>Mennyi ideig tart a beszerelés?</summary>
-        <p>A beszerelés gyors és mi végezzük, a kalibrálással és a helyszíni betanítással együtt. Az időpontot úgy egyeztetjük, hogy ne zavarja a munkát.</p>
+        <summary data-hu="Mennyi ideig tart a beszerelés?">Koliko traje ugradnja?</summary>
+        <p data-hu="A beszerelés gyors és mi végezzük, a kalibrálással és a helyszíni betanítással együtt. Az időpontot úgy egyeztetjük, hogy ne zavarja a munkát.">Ugradnja je brza i radimo je mi, sa kalibracijom i obukom na njivi. Termin biramo tako da vam ne poremeti radove.</p>
       </details>
       <details>
-        <summary>Megéri kisebb területen is?</summary>
-        <p>Függ a munkaműveletek számától és az inputanyag árától. Írja be a saját számait a kalkulátorba egy durva becsléshez, mi pedig beszélgetve pontosabban kiszámoljuk.</p>
+        <summary data-hu="Megéri kisebb területen is?">Isplati li se na manjim površinama?</summary>
+        <p data-hu="Függ a munkaműveletek számától és az inputanyag árától. Írja be a saját számait a kalkulátorba egy durva becsléshez, mi pedig beszélgetve pontosabban kiszámoljuk.">Zavisi od broja operacija i cene repromaterijala. Unesite svoje brojke u kalkulator za grubu procenu, a kroz razgovor ćemo izračunati tačnije.</p>
       </details>
     </div>
   </div>
@@ -541,9 +538,9 @@ body{overflow-x:hidden}
 
 <section id="kontakt">
   <div class="wrap">
-    <div class="oznaka">Kapcsolat</div>
-    <h2>Jöjjön el és nézze meg működés közben</h2>
-    <p class="uvod">Kérjen helyszíni bemutatót, vagy egyszerűen hívjon minket. Minden kérdésre válaszolunk, még mielőtt bármit vásárolna.</p>
+    <div class="oznaka" data-hu="Kapcsolat">Kontakt</div>
+    <h2 data-hu="Jöjjön el és nézze meg működés közben">Dođite da vidite kako radi</h2>
+    <p class="uvod" data-hu="Kérjen helyszíni bemutatót, vagy egyszerűen hívjon minket. Minden kérdésre válaszolunk, még mielőtt bármit vásárolna.">Zakažite demonstraciju na terenu ili nas jednostavno pozovite. Odgovaramo na sva pitanja i pre nego što išta kupite.</p>
 
     <div class="kontakt-grid">
       <div class="kontakt-info">
@@ -556,8 +553,8 @@ body{overflow-x:hidden}
           <a href="mailto:pivnicki.zivko@gmail.com">pivnicki.zivko@gmail.com</a>
         </div>
         <div class="blok">
-          <div class="k">Helyszín</div>
-          <a href="#" style="font-size:16px">Topolya, Szerbia</a>
+          <div class="k" data-hu="Helyszín">Lokacija</div>
+          <a href="#" style="font-size:16px" data-hu="Topolya, Szerbia">Bačka Topola, Srbija</a>
         </div>
         <div class="blok">
           <div class="k">Facebook</div>
@@ -567,11 +564,11 @@ body{overflow-x:hidden}
 
       <form action="https://api.web3forms.com/submit" method="POST" id="forma">
         <input type="hidden" name="access_key" value="41d79890-1c9f-4611-b690-bd5ad1ccd8c1">
-        <input type="hidden" name="subject" value="Érdeklődés a honlapról — Sveaverken">
+        <input type="hidden" name="subject" value="Upit sa sajta — Sveaverken autopilot">
         <input type="checkbox" name="botcheck" style="display:none">
 
         <div class="polje-f">
-          <label for="ime">Név</label>
+          <label for="ime" data-hu="Név">Ime i prezime</label>
           <input type="text" id="ime" name="ime" required>
         </div>
         <div class="polje-f">
@@ -579,26 +576,26 @@ body{overflow-x:hidden}
           <input type="tel" id="telefon" name="telefon" required>
         </div>
         <div class="polje-f">
-          <label for="model">Melyik modell érdekli?</label>
+          <label for="model" data-hu="Melyik modell érdekli?">Model koji vas zanima</label>
           <select id="model" name="model">
-            <option>Nem tudom, tanácsot kérek</option>
-            <option>Sveaverken F100 — 3.500 € + ÁFA</option>
-            <option>Sveaverken F200 — 4.500 € + ÁFA</option>
+            <option data-hu="Nem tudom, tanácsot kérek">Nisam siguran, treba mi savet</option>
+            <option data-hu="Sveaverken F100 — 3.500 € + ÁFA">Sveaverken F100 — 3.500 € + PDV</option>
+            <option data-hu="Sveaverken F200 — 4.500 € + ÁFA">Sveaverken F200 — 4.500 € + PDV</option>
           </select>
         </div>
         <div class="polje-f">
-          <label for="traktor">Traktor (márka és típus)</label>
-          <input type="text" id="traktor" name="traktor" placeholder="pl. Deutz-Fahr 6140">
+          <label for="traktor" data-hu="Traktor (márka és típus)">Traktor (marka i model)</label>
+          <input type="text" id="traktor" name="traktor" placeholder="npr. Deutz-Fahr 6140" data-hu-ph="pl. Deutz-Fahr 6140">
         </div>
         <div class="polje-f">
-          <label for="povrsina">Megművelt terület (ha)</label>
-          <input type="text" id="povrsina" name="povrsina" placeholder="pl. 180">
+          <label for="povrsina" data-hu="Megművelt terület (ha)">Površina koju obrađujete (ha)</label>
+          <input type="text" id="povrsina" name="povrsina" placeholder="npr. 180" data-hu-ph="pl. 180">
         </div>
         <div class="polje-f">
-          <label for="poruka">Kérdés</label>
-          <textarea id="poruka" name="poruka" placeholder="pl. érdekelne a bemutató időpontja és a fizetési feltételek"></textarea>
+          <label for="poruka" data-hu="Kérdés">Pitanje</label>
+          <textarea id="poruka" name="poruka" placeholder="npr. zanima me termin demonstracije i uslovi plaćanja" data-hu-ph="pl. érdekelne a bemutató időpontja és a fizetési feltételek"></textarea>
         </div>
-        <button type="submit" class="btn btn-1">Küldés</button>
+        <button type="submit" class="btn btn-1" data-hu="Küldés">Pošalji upit</button>
         <div class="status mono" id="status"></div>
       </form>
     </div>
@@ -607,8 +604,8 @@ body{overflow-x:hidden}
 
 <footer>
   <div class="wrap footer-in">
-    <span>© <span id="god">2026</span> Autopilot Navigacije · Topolya · Sveaverken F100 és F200</span>
-    <span><a href="https://www.facebook.com/autopilotnavigacije/" target="_blank" rel="noopener">Facebook</a> · <a href="tel:+381606553500">Hívás</a></span>
+    <span>© <span id="god">2026</span> Autopilot Navigacije · <span data-hu="Topolya">Bačka Topola</span> · Sveaverken F100 <span data-hu="és">i</span> F200</span>
+    <span><a href="https://www.facebook.com/autopilotnavigacije/" target="_blank" rel="noopener">Facebook</a> · <a href="tel:+381606553500" data-hu="Hívás">Pozovi</a></span>
     <a class="adversa" href="https://psihotrot-tech.github.io/Adversa/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 22h20L12 2z"/></svg>
       Powered by Adversa
@@ -617,8 +614,48 @@ body{overflow-x:hidden}
 </footer>
 
 <script>
+
+/* ---------- JEZIK: SR / HU u istom fajlu ---------- */
+var jezik = 'sr';
+var T = {
+  sr: { salje:'Šaljem…', ok:'Upit je poslat. Javljamo se u najkraćem roku.', ne:'Slanje nije uspelo. Pozovite nas telefonom.',
+        naslov:'Sveaverken F100 i F200 — autopilot navigacija za traktore | Bačka Topola', loc:'sr-RS' },
+  hu: { salje:'Küldés…', ok:'Az üzenetet elküldtük. Hamarosan jelentkezünk.', ne:'A küldés nem sikerült. Kérjük, hívjon minket telefonon.',
+        naslov:'Sveaverken F100 és F200 — automata kormányzás traktorokhoz | Topolya', loc:'hu-HU' }
+};
+
+function postaviJezik(j){
+  jezik = j;
+  var hu = (j === 'hu');
+
+  document.querySelectorAll('[data-hu]').forEach(function(e){
+    if(e.dataset.sr === undefined) e.dataset.sr = e.innerHTML;
+    e.innerHTML = hu ? e.dataset.hu : e.dataset.sr;
+  });
+  document.querySelectorAll('[data-hu-ph]').forEach(function(e){
+    if(e.dataset.srPh === undefined) e.dataset.srPh = e.placeholder;
+    e.placeholder = hu ? e.dataset.huPh : e.dataset.srPh;
+  });
+  document.querySelectorAll('[data-hu-alt]').forEach(function(e){
+    if(e.dataset.srAlt === undefined) e.dataset.srAlt = e.alt;
+    e.alt = hu ? e.dataset.huAlt : e.dataset.srAlt;
+  });
+
+  document.documentElement.lang = j;
+  document.title = T[j].naslov;
+  document.getElementById('btn-sr').classList.toggle('aktivan', !hu);
+  document.getElementById('btn-hu').classList.toggle('aktivan', hu);
+  document.getElementById('btn-sr').setAttribute('aria-pressed', !hu);
+  document.getElementById('btn-hu').setAttribute('aria-pressed', hu);
+  document.getElementById('god').textContent = new Date().getFullYear();
+
+  racunaj();
+}
+document.getElementById('btn-sr').addEventListener('click', function(){ postaviJezik('sr'); });
+document.getElementById('btn-hu').addEventListener('click', function(){ postaviJezik('hu'); });
+
 const el = function(id){ return document.getElementById(id); };
-const fmt = function(n){ return new Intl.NumberFormat('hu-HU',{maximumFractionDigits:0}).format(n); };
+const fmt = function(n){ return new Intl.NumberFormat(T[jezik].loc,{maximumFractionDigits:0}).format(n); };
 
 function racunaj(){
   const ha = +el('ha').value, ops = +el('ops').value;
@@ -642,8 +679,17 @@ function racunaj(){
 
   let roi;
   if(meseci === 0){ roi = '—'; }
-  else if(meseci <= 24){ roi = meseci + ' hónap'; }
-  else { roi = (meseci/12).toFixed(1).replace('.',',') + ' év'; }
+  else if(jezik === 'hu'){
+    roi = (meseci <= 24) ? meseci + ' hónap' : (meseci/12).toFixed(1).replace('.',',') + ' év';
+  }
+  else if(meseci <= 24){
+    const zadnja = meseci % 10, dvocifra = meseci % 100;
+    const rec = (zadnja === 1 && dvocifra !== 11) ? ' mesec'
+      : (zadnja >= 2 && zadnja <= 4 && (dvocifra < 12 || dvocifra > 14)) ? ' meseca' : ' meseci';
+    roi = meseci + rec;
+  } else {
+    roi = (meseci/12).toFixed(1).replace('.',',') + ' godina';
+  }
   el('r-roi').textContent = roi;
 }
 ['ha','ops','trosak','prek','cena'].forEach(function(id){ el(id).addEventListener('input', racunaj); });
@@ -653,7 +699,7 @@ const forma = document.getElementById('forma');
 const status = document.getElementById('status');
 forma.addEventListener('submit', function(e){
   e.preventDefault();
-  status.textContent = 'Küldés…';
+  status.textContent = T[jezik].salje;
   fetch('https://api.web3forms.com/submit', {
     method:'POST',
     headers:{'Content-Type':'application/json', Accept:'application/json'},
@@ -661,13 +707,16 @@ forma.addEventListener('submit', function(e){
   })
   .then(function(r){ return r.json(); })
   .then(function(d){
-    if(d.success){ status.textContent = 'Az üzenetet elküldtük. Hamarosan jelentkezünk.'; forma.reset(); }
-    else { status.textContent = 'A küldés nem sikerült. Kérjük, hívjon minket telefonon.'; }
+    if(d.success){ status.textContent = T[jezik].ok; forma.reset(); }
+    else { status.textContent = T[jezik].ne; }
   })
-  .catch(function(){ status.textContent = 'A küldés nem sikerült. Kérjük, hívjon minket telefonon.'; });
+  .catch(function(){ status.textContent = T[jezik].ne; });
 });
 
 document.getElementById('god').textContent = new Date().getFullYear();
+
+/* ako je pregledač na mađarskom, sajt se sam otvara na mađarskom */
+if((navigator.language || '').toLowerCase().indexOf('hu') === 0){ postaviJezik('hu'); }
 </script>
 </body>
 </html>
