@@ -3,17 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sveaverken F200 — autopilot navigacija za traktore | Bačka Topola</title>
-<meta name="description" content="Sveaverken F200 sistem za automatsko upravljanje traktorom. RTK preciznost ±2,5 cm, ISOBUS, 3 godine RTK signala i instalacija u ceni. 4.500 € + PDV. Bačka Topola, Srbija.">
-<meta name="keywords" content="Sveaverken F200, autopilot navigacija, GPS navigacija za traktor, RTK, precizna poljoprivreda, auto steer, ISOBUS, Bačka Topola, Vojvodina">
+<title>Sveaverken F100 i F200 — autopilot navigacija za traktore | Bačka Topola</title>
+<meta name="description" content="Sveaverken autopilot navigacija za traktore. F100 od 3.500 € i F200 od 4.500 € + PDV. RTK preciznost ±2,5 cm, ISOBUS, instalacija uključena. Bačka Topola, Srbija.">
+<meta name="keywords" content="Sveaverken F100, Sveaverken F200, autopilot navigacija, GPS navigacija za traktor, RTK, precizna poljoprivreda, auto steer, ISOBUS, Bačka Topola, Vojvodina">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="sr_RS">
-<meta property="og:title" content="Sveaverken F200 — autopilot navigacija za traktore">
-<meta property="og:description" content="RTK preciznost ±2,5 cm. 3 godine RTK signala, 10 parcela i instalacija u ceni. 4.500 € + PDV.">
+<meta property="og:title" content="Sveaverken F100 i F200 — autopilot navigacija za traktore">
+<meta property="og:description" content="RTK preciznost ±2,5 cm. Instalacija i RTK signal u ceni. F100 od 3.500 €, F200 od 4.500 € + PDV.">
 <!-- IZMENI: domen i og slika -->
 <meta property="og:url" content="https://autopilotnavigacije.com/">
 <meta name="theme-color" content="#171310">
+
+<link rel="alternate" hreflang="sr" href="./index.html">
+<link rel="alternate" hreflang="hu" href="./hu.html">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +52,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(237,230,214,.92);backdrop-f
 .nav-links a:hover{opacity:1}
 .tel-btn{background:var(--zemlja);color:var(--slama);text-decoration:none;padding:10px 18px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.04em;transition:background .2s;white-space:nowrap}
 .tel-btn:hover{background:var(--rotaciono)}
-@media(max-width:900px){.nav-links a:not(.tel-btn){display:none}}
+@media(max-width:900px){.nav-links > a:not(.tel-btn){display:none}}
 
 header{background:var(--zemlja);color:var(--slama);padding:76px 0 0;overflow:hidden;position:relative}
 header::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--linija) 1px,transparent 1px),linear-gradient(90deg,var(--linija) 1px,transparent 1px);background-size:56px 56px;opacity:.5;pointer-events:none}
@@ -68,7 +71,7 @@ h1 em{font-style:normal;color:var(--rotaciono)}
 .foto-box{border:1px solid var(--linija);background:rgba(0,0,0,.25);padding:14px}
 .foto-head{display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-bottom:12px}
 .foto-head .tag{color:var(--klas)}
-.foto-box img{width:100%;height:auto;display:block;padding:10px 0}
+.foto-box img{width:100%;height:auto;display:block;border:1px solid rgba(237,230,214,.08)}
 .foto-potpis{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;opacity:.5;margin-top:12px;line-height:1.5}
 
 .traka{border-top:1px solid var(--linija);margin-top:70px;position:relative}
@@ -148,6 +151,9 @@ details p{margin-top:14px;opacity:.75;font-size:15px;max-width:70ch}
 .kontakt-info .blok:first-child{padding-top:0}
 form .polje-f{margin-bottom:18px}
 form label{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin-bottom:8px}
+select{width:100%;background:rgba(237,230,214,.06);border:1px solid var(--linija);color:var(--slama);padding:13px 14px;font-family:'IBM Plex Sans',sans-serif;font-size:16px;appearance:none}
+select option{background:var(--zemlja);color:var(--slama)}
+select:focus{outline:none;border-color:var(--rotaciono)}
 input[type=text],input[type=tel],input[type=email],textarea{width:100%;background:rgba(237,230,214,.06);border:1px solid var(--linija);color:var(--slama);padding:13px 14px;font-family:'IBM Plex Sans',sans-serif;font-size:16px}
 input:focus,textarea:focus{outline:none;border-color:var(--rotaciono)}
 textarea{resize:vertical;min-height:110px}
@@ -167,6 +173,25 @@ form .btn-1{width:100%;border:none;cursor:pointer;font-family:'IBM Plex Sans',sa
 .video-tekst .citat{border-left:2px solid var(--rotaciono);padding-left:20px;margin-top:28px;font-size:19px;line-height:1.5}
 @media(max-width:900px){.video-grid{grid-template-columns:1fr;gap:36px}}
 
+.model-oznaka{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin-bottom:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.plamen{background:var(--rotaciono);color:#fff;padding:3px 9px;font-size:10px;letter-spacing:.08em;opacity:1}
+.paket>div.istaknut{background:#E5DCC7;box-shadow:inset 0 0 0 2px var(--rotaciono)}
+.paket>div.istaknut .model-oznaka{opacity:.75}
+.btn-tamni{border-color:var(--linija-tamna);color:var(--zemlja)}
+.btn-tamni:hover{background:var(--zemlja);color:var(--slama)}
+.paket .btn{margin-top:26px;width:100%;text-align:center}
+.racunica{margin-top:26px;padding:20px 24px;border-left:2px solid var(--rotaciono);background:rgba(23,19,16,.04);font-size:15px;max-width:70ch}
+
+.jezik{display:flex;border:1px solid var(--zemlja);margin-left:10px;flex:none}
+.jezik a{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;padding:9px 12px;text-decoration:none;opacity:.6;transition:background .2s,color .2s,opacity .2s}
+.jezik a:hover{opacity:1}
+.jezik a.aktivan{background:var(--zemlja);color:var(--slama);opacity:1}
+.footer-in{align-items:center}
+.adversa{display:flex;align-items:center;gap:7px;text-decoration:none;opacity:.75;transition:opacity .2s}
+.adversa:hover{opacity:1;color:var(--rotaciono)}
+.adversa svg{width:13px;height:13px;flex:none}
+@media(max-width:600px){.footer-in{flex-direction:column;align-items:flex-start;gap:12px}}
+
 footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:'IBM Plex Mono',monospace;font-size:12px}
 .footer-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;opacity:.55}
 .footer-in a{text-decoration:none}
@@ -183,6 +208,21 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
   section{padding:64px 0}
   header{padding-top:48px}
 }
+@media(max-width:560px){
+  .wrap{padding:0 16px}
+  .nav-in{gap:8px}
+  .logo{font-size:12px;gap:7px;min-width:0}
+  .logo .nis{width:18px;height:18px}
+  .tel-btn{padding:9px 11px;font-size:12px}
+  .jezik{margin-left:6px}
+  .jezik a{padding:8px 9px;font-size:12px}
+}
+@media(max-width:380px){
+  .logo{font-size:0;gap:0}
+  .logo .nis{width:22px;height:22px}
+}
+body{overflow-x:hidden}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
 </style>
 </head>
@@ -203,6 +243,10 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
       <a href="#kalkulator">Kalkulator</a>
       <a href="#cena">Cena</a>
       <a href="tel:+381606553500" class="tel-btn">060 655 3500</a>
+      <div class="jezik">
+        <a href="index.html" class="aktivan" hreflang="sr">SR</a>
+        <a href="hu.html" hreflang="hu">HU</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -211,9 +255,9 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="oznaka mono">Sveaverken F200 · Bačka Topola</div>
+        <div class="oznaka mono">Sveaverken F100 · F200 · Bačka Topola</div>
         <h1>Svaki prohod tačno <em>tamo gde treba</em>.</h1>
-        <p class="hero-lead">Sveaverken F200 — sistem za automatsko upravljanje sa RTK preciznošću ±2,5 cm. U ceni su tri godine RTK signala, deset parcela i kompletna instalacija. Montažu radimo mi.</p>
+        <p class="hero-lead">Sveaverken sistemi za automatsko upravljanje sa RTK preciznošću ±2,5 cm. Dva modela — F100 od 3.500 € i F200 od 4.500 €. RTK signal, unos parcela i kompletna instalacija ulaze u cenu.</p>
         <div class="hero-cta">
           <a href="#kontakt" class="btn btn-1">Zakaži demonstraciju</a>
           <a href="#kalkulator" class="btn btn-2">Izračunaj uštedu</a>
@@ -225,8 +269,8 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
           <span>Sveaverken F200 · kompletan set</span>
           <span class="tag">Volan · antena · ekran</span>
         </div>
-        <img src="slika.png" alt="Sveaverken F200 — kompletan set: uređaj za automatsko upravljanje, ekran i antena" loading="eager" width="1160" height="680">
-        <div class="foto-potpis">Uređaj, ekran, antena i instalacija — sve u jednoj ceni.</div>
+        <img src="slika.jpg" alt="Sveaverken F200 — volan sa motorom za automatsko upravljanje, RTK antena i ekran osetljiv na dodir" loading="eager" width="1080" height="722">
+        <div class="foto-potpis">Sveaverken F200 — volan sa motorom, RTK antena i ekran na dodir. Instalacija ulazi u cenu.</div>
       </div>
     </div>
 
@@ -234,8 +278,8 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
       <div class="wrap" style="padding:0">
         <div class="traka-in">
           <div><div class="v">±2,5 cm</div><div class="k">RTK preciznost</div></div>
-          <div><div class="v">3 godine</div><div class="k">RTK signal u ceni</div></div>
-          <div><div class="v">10 parcela</div><div class="k">Unos uključen, po izboru</div></div>
+          <div><div class="v">od 3.500 €</div><div class="k">+ PDV, instalacija u ceni</div></div>
+          <div><div class="v">10 parcela</div><div class="k">Unos uključen u cenu</div></div>
           <div><div class="v">ISOBUS</div><div class="k">Kompatibilnost</div></div>
         </div>
       </div>
@@ -260,7 +304,7 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
       <div class="video-tekst">
         <div class="oznaka">Sa terena</div>
         <h2>Naše ugradnje, ne reklamne fotografije</h2>
-        <p class="uvod">Ovako sistem izgleda u stvarnim uslovima — na traktoru, na parceli, posle montaže koju smo sami odradili.</p>
+        <p class="uvod">Ovako sistem izgleda u stvarnim uslovima — na traktoru, na njivi, posle ugradnje koju smo sami odradili.</p>
         <p class="citat">Koliko bi posao bio lakši kada bi traktor u svakom prolazu išao tačno tamo gde treba?</p>
         <a href="#kontakt" class="btn btn-1" style="margin-top:30px">Zakaži demonstraciju</a>
       </div>
@@ -272,38 +316,38 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
   <div class="wrap">
     <div class="oznaka">Zašto F200</div>
     <h2>Preklapanje je trošak koji plaćate svake sezone</h2>
-    <p class="uvod">Vozač koji "niša ni" ceo dan preklapa 15–25 cm po prohodu. Na 200 hektara i pet operacija godišnje, to su gorivo, seme, đubrivo i hemija koji dvaput odu u istu zemlju.</p>
+    <p class="uvod">Ko ceo dan drži liniju na oko, preklapa 15–25 cm po prohodu. Na 200 hektara i pet operacija godišnje, to su gorivo, seme, đubrivo i hemija koji dvaput odu u istu zemlju.</p>
 
     <div class="karte">
       <div class="karta">
         <svg viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg>
-        <h3>Preciznost na nivou centimetra</h3>
-        <p>RTK korekcija drži mašinu u ±2,5 cm. To je razlika između navigacije koja pomaže i autopilota koji drži liniju.</p>
+        <h3>Tačnost u centimetar</h3>
+        <p>RTK korekcija drži mašinu u granici od 2,5 cm. To je razlika između navigacije koja samo pomaže i autopilota koji drži liniju umesto vas.</p>
       </div>
       <div class="karta">
         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M8 21h8"/></svg>
         <h3>Jednostavno rukovanje</h3>
-        <p>Veliki ekran osetljiv na dodir i logičan meni. Obuka traje kratko — sistem je napravljen za rad, ne za učenje.</p>
+        <p>Veliki ekran na dodir i pregledan meni. Obuka je kratka — sistem je pravljen da se radi na njemu, a ne da se uči.</p>
       </div>
       <div class="karta">
         <svg viewBox="0 0 24 24"><path d="M4 15a4 4 0 013-6.8 5 5 0 019.6-1A4 4 0 0119 15z"/><path d="M8 19h8"/></svg>
         <h3>Pouzdano u svakim uslovima</h3>
-        <p>Rad noću, u prašini i magli, na ravnici i na zahtevnijem terenu. Linija ostaje linija bez obzira na vidljivost.</p>
+        <p>Radi noću, u prašini i magli, na ravnici i na težem terenu. Linija ostaje linija bez obzira na vidljivost.</p>
       </div>
       <div class="karta">
         <svg viewBox="0 0 24 24"><path d="M3 20h18M6 20V9l6-5 6 5v11"/></svg>
-        <h3>Manje inputa, manje goriva</h3>
-        <p>Nema duplog prolaza i nema propuštenih traka. Repromaterijal se troši tačno onoliko koliko parcela traži.</p>
+        <h3>Manje semena, đubriva i goriva</h3>
+        <p>Nema duplog prolaza i nema propuštenih traka. Troši se tačno onoliko koliko njiva traži, ni gram više.</p>
       </div>
       <div class="karta">
         <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        <h3>Jedna licenca, deset parcela</h3>
-        <p>Parcele koje sami birate ostaju u sistemu. Sledeće sezone samo izaberete parcelu iz liste i nastavljate.</p>
+        <h3>Deset parcela u ceni</h3>
+        <p>Parcele koje sami izaberete ostaju upamćene. Sledeće sezone samo izaberete njivu sa spiska i nastavite gde ste stali.</p>
       </div>
       <div class="karta">
         <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18"/></svg>
-        <h3>RTK signal tri godine</h3>
-        <p>Bez pretplate i bez skrivenih troškova u prve tri godine. Signal je uključen u cenu sistema.</p>
+        <h3>RTK signal u ceni</h3>
+        <p>Godinu dana uz F100, tri godine uz F200. Bez pretplate i bez skrivenih troškova u tom periodu.</p>
       </div>
     </div>
   </div>
@@ -311,9 +355,9 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
 
 <section id="specifikacije">
   <div class="wrap">
-    <div class="oznaka">Sveaverken F200</div>
+    <div class="oznaka">Sveaverken F100 · F200</div>
     <h2>Šta uređaj radi</h2>
-    <p class="uvod">Automatsko upravljanje za setvu, prskanje, đubrenje, obradu i druge radove — na velikom broju traktorskih marki.</p>
+    <p class="uvod">Automatsko upravljanje za setvu, prskanje, đubrenje, obradu i ostale radove — na traktorima velikog broja marki.</p>
 
     <!-- IZMENI: dopuni tehničkim podacima iz zvanične dokumentacije ako imaš -->
     <div class="spec">
@@ -325,9 +369,9 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
       </div>
       <div>
         <div class="spec-red"><span>Povezivanje</span><span>ISOBUS kompatibilnost</span></div>
-        <div class="spec-red"><span>Parcele</span><span>10 parcela po licenci</span></div>
+        <div class="spec-red"><span>Parcele</span><span>10 parcela, unos besplatan</span></div>
         <div class="spec-red"><span>Primena</span><span>Setva, prskanje, đubrenje, obrada</span></div>
-        <div class="spec-red"><span>Montaža</span><span>Brza ugradnja, radimo je mi</span></div>
+        <div class="spec-red"><span>Ugradnja</span><span>Brza, radimo je mi</span></div>
       </div>
     </div>
 
@@ -349,23 +393,23 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
     <div class="koraci">
       <div class="korak">
         <div class="br">01</div>
-        <h3>Montaža na vaš traktor</h3>
-        <p>Instalaciju radimo mi — uređaj, antena, ekran i kalibracija. Sve na jednom mestu, bez slanja kod trećih lica.</p>
+        <h3>Ugradnja na vaš traktor</h3>
+        <p>Ugradnju radimo mi — uređaj, antena, ekran i kalibracija. Sve na jednom mestu, ne šaljemo vas nikom drugom.</p>
       </div>
       <div class="korak">
         <div class="br">02</div>
         <h3>Unos parcela</h3>
-        <p>Deset parcela po vašem izboru unosimo besplatno. Granice, međe i A-B linije ostaju sačuvane u sistemu.</p>
+        <p>Deset njiva po vašem izboru unosimo besplatno — na godinu dana uz F100, na tri godine uz F200. Granice, međe i A-B linije ostaju upamćene.</p>
       </div>
       <div class="korak">
         <div class="br">03</div>
-        <h3>F200 preuzima volan</h3>
-        <p>Vi kontrolišete priključak i uvratinu, mašina drži prohod u centimetar. Preklapanje pada na nulu.</p>
+        <h3>Sistem preuzima volan</h3>
+        <p>Vi vodite računa o priključku i uvratini, mašina drži prohod u centimetar. Preklapanje pada na nulu.</p>
       </div>
       <div class="korak">
         <div class="br">04</div>
         <h3>Obuka i podrška</h3>
-        <p>Prolazimo kroz sve funkcije na vašoj parceli. Posle toga ostajemo dostupni za pitanja i servis.</p>
+        <p>Sve funkcije prolazimo sa vama na njivi. Posle toga ostajemo dostupni za pitanja i servis.</p>
       </div>
     </div>
   </div>
@@ -375,7 +419,7 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
   <div class="wrap">
     <div class="oznaka">Kalkulator</div>
     <h2>Koliko vas preklapanje košta godišnje</h2>
-    <p class="uvod">Pomerite klizače na svoje brojke. Računica pretpostavlja da autopilot svodi preklapanje na oko 0,5%.</p>
+    <p class="uvod">Podesite klizače prema svojim brojkama. Računica polazi od toga da autopilot spušta preklapanje na oko 0,5%.</p>
 
     <div class="kalk">
       <div>
@@ -388,7 +432,7 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
           <input type="range" id="ops" min="1" max="12" step="1" value="5">
         </div>
         <div class="polje">
-          <label for="trosak">Trošak po hektaru (gorivo + repromaterijal) <b><span id="trosak-v">70</span> €</b></label>
+          <label for="trosak">Trošak po hektaru (gorivo i repromaterijal) <b><span id="trosak-v">70</span> €</b></label>
           <input type="range" id="trosak" min="20" max="250" step="5" value="70">
         </div>
         <div class="polje">
@@ -397,7 +441,7 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
         </div>
         <div class="polje">
           <label for="cena">Cena sistema <b><span id="cena-v">4.500</span> €</b></label>
-          <input type="range" id="cena" min="2000" max="12000" step="100" value="4500">
+          <input type="range" id="cena" min="3000" max="8000" step="100" value="4500">
         </div>
       </div>
 
@@ -405,12 +449,12 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
         <div class="glavno" id="r-usteda">5.250 €</div>
         <div class="glavno-k">Godišnja ušteda</div>
         <hr>
-        <div class="red"><span>Obrađeno duplo</span><span id="r-dupli">80 ha</span></div>
+        <div class="red"><span>Duplo obrađeno</span><span id="r-dupli">80 ha</span></div>
         <div class="red"><span>Ušteda po hektaru</span><span id="r-po-ha">26 €</span></div>
-        <div class="red"><span>Povraćaj ulaganja</span><span id="r-roi">10 meseci</span></div>
+        <div class="red"><span>Povrat ulaganja</span><span id="r-roi">10 meseci</span></div>
         <hr>
         <a href="#kontakt" class="btn btn-1" style="display:block;text-align:center">Pošalji upit za ponudu</a>
-        <p class="napomena">Procena, ne obavezujuća ponuda. Ne uključuje uštedu vremena, produžen radni dan i manje trošenje mašine.</p>
+        <p class="napomena">Ovo je procena, a ne obavezujuća ponuda. U računicu nisu ušli ušteda vremena, duži radni dan i manje trošenje mašine.</p>
       </div>
     </div>
   </div>
@@ -419,26 +463,39 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
 <section id="cena">
   <div class="wrap">
     <div class="oznaka">Ponuda</div>
-    <h2>U ceni nije samo uređaj</h2>
+    <h2>Dva modela, u obe cene ulazi instalacija</h2>
+    <p class="uvod">Razlika nije u preciznosti — oba sistema drže ±2,5 cm. Razlika je u tome koliko dugo RTK signal i parcele idu bez doplate.</p>
 
-    <!-- IZMENI: proveri da li akcijska cena i dalje važi -->
     <div class="paket">
       <div>
-        <div class="mono" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.5;margin-bottom:14px">Sveaverken F200</div>
-        <div class="cena">4.500 € <small>+ PDV · kompletan sistem</small></div>
+        <div class="model-oznaka">Sveaverken F100</div>
+        <div class="cena">3.500 € <small>+ PDV · sa instalacijom</small></div>
         <ul class="lista">
-          <li><b>Uređaj F200</b><em>Automatsko upravljanje sa ekranom osetljivim na dodir</em></li>
-          <li><b>RTK signal — 3 godine</b><em>Bez pretplate i dodatnih troškova</em></li>
-          <li><b>Unos 10 parcela</b><em>Parcele birate vi, unos je besplatan</em></li>
-          <li><b>Kompletna instalacija</b><em>Montažu obavljamo mi, uključena je u cenu</em></li>
-          <li><b>Obuka i podrška</b><em>Rukovanje prolazimo na terenu, ostajemo dostupni</em></li>
+          <li><b>RTK signal — 1 godina</b><em>Bez doplate u prvoj godini</em></li>
+          <li><b>10 parcela — 1 godina</b><em>Parcele birate vi, unos je besplatan</em></li>
+          <li><b>Kompletna instalacija</b><em>Montažu obavljamo mi</em></li>
         </ul>
+        <a href="#kontakt" class="btn btn-2 btn-tamni">Pitaj za F100</a>
       </div>
-      <div>
-        <h3 style="font-size:19px">Vidite sistem pre kupovine</h3>
-        <p style="opacity:.75;font-size:15px;margin-top:12px">Ugradnje radimo sami i možemo vam pokazati sistem u radu — na traktoru, na parceli, u stvarnim uslovima. Ne na reklamnim fotografijama.</p>
-        <p style="opacity:.75;font-size:15px;margin-top:16px">Javite se sa podacima o traktoru i površini koju obrađujete, pa ćemo kroz razgovor proći kroz vaš konkretan slučaj — i reći otvoreno ako se ne isplati.</p>
-        <a href="#kontakt" class="btn btn-1" style="margin-top:26px">Zakaži demonstraciju</a>
+      <div class="istaknut">
+        <div class="model-oznaka">Sveaverken F200 <span class="plamen">Nova generacija</span></div>
+        <div class="cena">4.500 € <small>+ PDV · sa instalacijom</small></div>
+        <ul class="lista">
+          <li><b>RTK signal — 3 godine</b><em>Tri sezone bez doplate</em></li>
+          <li><b>10 parcela — 3 godine</b><em>Parcele birate vi, unos je besplatan</em></li>
+          <li><b>Kompletna instalacija</b><em>Montažu obavljamo mi</em></li>
+        </ul>
+        <a href="#kontakt" class="btn btn-1">Pitaj za F200</a>
+      </div>
+    </div>
+
+    <p class="racunica">Razlika u ceni je 1.000 €, a F200 nosi dve godine RTK signala više. Ako sistem držite duže od dve sezone — a držaćete ga — F200 je jeftiniji izbor.</p>
+
+    <div style="margin-top:56px">
+      <div class="oznaka">Šta oba modela imaju</div>
+      <div class="masine">
+        <span>±2,5 cm RTK</span><span>ISOBUS</span><span>Ekran na dodir</span><span>A-B linije</span>
+        <span>Krive i konture</span><span>Rad noću i u magli</span><span>Obuka na terenu</span>
       </div>
     </div>
   </div>
@@ -455,24 +512,28 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
         <p>Da. Sistem je kompatibilan sa velikim brojem traktorskih marki i ne zahteva fabričku pripremu za automatsko upravljanje. Pošaljite marku i model, pa ćemo potvrditi.</p>
       </details>
       <details>
-        <summary>Šta se dešava posle tri godine RTK signala?</summary>
-        <p>Prve tri godine signal je uključen u cenu. Nakon toga se nastavak koristi po dogovoru — o uslovima vas obaveštavamo unapred, bez iznenađenja.</p>
+        <summary>Koja je razlika između F100 i F200?</summary>
+        <p>Preciznost je ista — oba drže ±2,5 cm. Razlika je u trajanju: uz F100 dobijate RTK signal i parcele na godinu dana, uz F200 na tri godine. F200 je novija generacija.</p>
+      </details>
+      <details>
+        <summary>Šta se dešava kad istekne RTK signal iz paketa?</summary>
+        <p>Kad istekne — posle godinu dana kod F100, odnosno tri godine kod F200 — signal se produžava po dogovoru. Uslove kažemo unapred, bez iznenađenja.</p>
       </details>
       <details>
         <summary>Šta ako imam više od 10 parcela?</summary>
-        <p>Deset parcela ide besplatno uz licencu, po vašem izboru. Za dodatne parcele javite nam se — rešavamo dogovorom.</p>
+        <p>Deset parcela ide besplatno uz oba modela, po vašem izboru. Za dodatne parcele javite nam se — rešavamo dogovorom.</p>
       </details>
       <details>
         <summary>Da li traktor vozi sam, bez vozača?</summary>
-        <p>Ne. Vozač je u kabini i nadzire rad. F200 preuzima volan i drži prohod, dok priključak, uvratinu i bezbednost kontroliše čovek.</p>
+        <p>Ne. Vozač je u kabini i nadzire rad. Sistem preuzima volan i drži prohod, dok priključak, uvratinu i bezbednost kontroliše čovek.</p>
       </details>
       <details>
-        <summary>Koliko traje montaža?</summary>
-        <p>Montaža je brza i radimo je mi, uključujući kalibraciju i obuku na parceli. Termin dogovaramo tako da vam ne remeti radove.</p>
+        <summary>Koliko traje ugradnja?</summary>
+        <p>Ugradnja je brza i radimo je mi, sa kalibracijom i obukom na njivi. Termin biramo tako da vam ne poremeti radove.</p>
       </details>
       <details>
         <summary>Isplati li se na manjim površinama?</summary>
-        <p>Zavisi od broja operacija i cene repromaterijala. Unesite svoje brojke u kalkulator za grubu procenu, a mi ćemo kroz razgovor izračunati tačnije.</p>
+        <p>Zavisi od broja operacija i cene repromaterijala. Unesite svoje brojke u kalkulator za grubu procenu, a kroz razgovor ćemo izračunati tačnije.</p>
       </details>
     </div>
   </div>
@@ -506,7 +567,7 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
 
       <form action="https://api.web3forms.com/submit" method="POST" id="forma">
         <input type="hidden" name="access_key" value="41d79890-1c9f-4611-b690-bd5ad1ccd8c1">
-        <input type="hidden" name="subject" value="Upit sa sajta — Sveaverken F200">
+        <input type="hidden" name="subject" value="Upit sa sajta — Sveaverken autopilot">
         <input type="checkbox" name="botcheck" style="display:none">
 
         <div class="polje-f">
@@ -516,6 +577,14 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
         <div class="polje-f">
           <label for="telefon">Telefon</label>
           <input type="tel" id="telefon" name="telefon" required>
+        </div>
+        <div class="polje-f">
+          <label for="model">Model koji vas zanima</label>
+          <select id="model" name="model">
+            <option>Nisam siguran, treba mi savet</option>
+            <option>Sveaverken F100 — 3.500 € + PDV</option>
+            <option>Sveaverken F200 — 4.500 € + PDV</option>
+          </select>
         </div>
         <div class="polje-f">
           <label for="traktor">Traktor (marka i model)</label>
@@ -538,8 +607,12 @@ footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:
 
 <footer>
   <div class="wrap footer-in">
-    <span>© <span id="god">2026</span> Autopilot Navigacije · Bačka Topola · Sveaverken F200</span>
+    <span>© <span id="god">2026</span> Autopilot Navigacije · Bačka Topola · Sveaverken F100 i F200</span>
     <span><a href="https://www.facebook.com/autopilotnavigacije/" target="_blank" rel="noopener">Facebook</a> · <a href="tel:+381606553500">Pozovi</a></span>
+    <a class="adversa" href="https://psihotrot-tech.github.io/Adversa/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 22h20L12 2z"/></svg>
+      Powered by Adversa
+    </a>
   </div>
 </footer>
 
