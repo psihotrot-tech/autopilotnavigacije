@@ -189,6 +189,18 @@ form .btn-1{width:100%;border:none;cursor:pointer;font-family:'IBM Plex Sans',sa
 .adversa svg{width:13px;height:13px;flex:none}
 @media(max-width:600px){.footer-in{flex-direction:column;align-items:flex-start;gap:12px}}
 
+.galerija{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linija);border:1px solid var(--linija);margin-top:56px}
+.galerija figure{background:var(--zemlja);margin:0}
+.galerija figure:last-child{grid-column:1 / -1}
+.galerija img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3}
+.galerija figure:last-child img{aspect-ratio:16/6}
+.galerija figcaption{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;opacity:.5;padding:12px 14px;line-height:1.5}
+@media(max-width:700px){
+  .galerija{grid-template-columns:1fr}
+  .galerija figure:last-child{grid-column:auto}
+  .galerija figure:last-child img{aspect-ratio:16/9}
+}
+
 footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:'IBM Plex Mono',monospace;font-size:12px}
 .footer-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;opacity:.55}
 .footer-in a{text-decoration:none}
@@ -306,6 +318,21 @@ body{overflow-x:hidden}
         <a href="#kontakt" class="btn btn-1" style="margin-top:30px" data-hu="Kérjen bemutatót">Zakaži demonstraciju</a>
       </div>
     </div>
+
+    <div class="galerija">
+      <figure>
+        <img src="ugradnja-1.jpg" alt="Sveaverken ekran i volan sa motorom u kabini traktora John Deere" loading="lazy" width="637" height="636" data-hu-alt="Sveaverken kijelző és kormány motorral a John Deere traktor fülkéjében">
+        <figcaption data-hu="Kijelző és kormány a fülkében — John Deere 6120M a beszerelés után">Ekran i volan u kabini — John Deere 6120M posle ugradnje</figcaption>
+      </figure>
+      <figure>
+        <img src="ugradnja-2.jpg" alt="John Deere 6120M sa ugrađenom Sveaverken antenom na krovu kabine" loading="lazy" width="425" height="636" data-hu-alt="John Deere 6120M beszerelt Sveaverken antennával a fülke tetején">
+        <figcaption data-hu="RTK antenna a fülke tetején — a gép munkára kész">RTK antena na krovu kabine — mašina spremna za njivu</figcaption>
+      </figure>
+      <figure>
+        <img src="ugradnja-3.jpg" alt="Parcela snimljena iz vazduha — pravi prohodi bez preklapanja posle rada sa autopilotom" loading="lazy" width="1069" height="424" data-hu-alt="Tábla madártávlatból — egyenes menetek átfedés nélkül, automata kormányzással">
+        <figcaption data-hu="Így néz ki a tábla automata kormányzás után — egyenes menetek, átfedés és kihagyott sáv nélkül">Ovako izgleda njiva posle rada sa autopilotom — prohod do prohoda, bez preklapanja i bez propuštenih traka</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -328,7 +355,7 @@ body{overflow-x:hidden}
       </div>
       <div class="karta">
         <svg viewBox="0 0 24 24"><path d="M4 15a4 4 0 013-6.8 5 5 0 019.6-1A4 4 0 0119 15z"/><path d="M8 19h8"/></svg>
-        <h3 data-hu="Megbízható minden körülmények között">Pouzdano u svim uslovima</h3>
+        <h3 data-hu="Megbízható minden körülmények között">Pouzdano u svakim uslovima</h3>
         <p data-hu="Dolgozik éjszaka, porban és ködben, síkon és nehezebb terepen is. A nyomvonal nyomvonal marad, látási viszonyoktól függetlenül.">Radi noću, u prašini i magli, na ravnici i na težem terenu. Linija ostaje linija bez obzira na vidljivost.</p>
       </div>
       <div class="karta">
