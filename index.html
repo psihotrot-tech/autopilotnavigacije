@@ -15,6 +15,22 @@
 <meta property="og:url" content="https://autopilotnavigacije.com/">
 <meta name="theme-color" content="#171310">
 
+<!-- ================= MERENJE =================
+   1) Google Analytics 4: zameni G-XXXXXXXXXX svojim Measurement ID-jem
+      (analytics.google.com -> Admin -> Data Streams -> Web)
+   2) Google Ads konverzije: zameni AW-XXXXXXXXX svojim Conversion ID-jem
+      (Google Ads -> Ciljevi -> Konverzije -> Nova radnja -> Veb-sajt)
+   Ako neku od ove dve stvari ne koristis, samo obrisi taj red.
+================================================== -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');   // Analytics
+  gtag('config', 'AW-XXXXXXXXX');   // Google Ads
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -194,7 +210,8 @@ form .btn-1{width:100%;border:none;cursor:pointer;font-family:'IBM Plex Sans',sa
 .galerija figure:last-child{grid-column:1 / -1}
 .galerija img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3}
 .galerija figure:last-child img{aspect-ratio:16/6}
-.galerija figcaption{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;opacity:.5;padding:12px 14px;line-height:1.5}
+.galerija figcaption{font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:var(--slama);opacity:.92;padding:14px 16px 18px;line-height:1.5;border-top:1px solid var(--linija)}
+.galerija figcaption::before{content:'';display:inline-block;width:14px;height:2px;background:var(--rotaciono);vertical-align:middle;margin-right:9px}
 @media(max-width:700px){
   .galerija{grid-template-columns:1fr}
   .galerija figure:last-child{grid-column:auto}
@@ -251,7 +268,7 @@ body{overflow-x:hidden}
       <a href="#specifikacije">F200</a>
       <a href="#kalkulator" data-hu="Kalkulátor">Kalkulator</a>
       <a href="#cena" data-hu="Ár">Cena</a>
-      <a href="tel:+381606553500" class="tel-btn">060 655 3500</a>
+      <a href="tel:+381606553500" class="tel-btn" data-hu="060 712 0294" data-hu-href="tel:+381607120294">060 655 3500</a>
       <div class="jezik">
         <button type="button" id="btn-sr" class="aktivan" aria-pressed="true">SR</button>
         <button type="button" id="btn-hu" aria-pressed="false">HU</button>
@@ -288,7 +305,7 @@ body{overflow-x:hidden}
         <div class="traka-in">
           <div data-hu="&lt;div class=&quot;v&quot;&gt;±2,5 cm&lt;/div&gt;&lt;div class=&quot;k&quot;&gt;RTK pontosság&lt;/div&gt;"><div class="v">±2,5 cm</div><div class="k">RTK preciznost</div></div>
           <div data-hu="&lt;div class=&quot;v&quot;&gt;3.500 €-tól&lt;/div&gt;&lt;div class=&quot;k&quot;&gt;+ ÁFA, telepítéssel&lt;/div&gt;"><div class="v">od 3.500 €</div><div class="k">+ PDV, instalacija u ceni</div></div>
-          <div data-hu="&lt;div class=&quot;v&quot;&gt;10 parcella&lt;/div&gt;&lt;div class=&quot;k&quot;&gt;A bevitel az árban&lt;/div&gt;"><div class="v">10 parcela</div><div class="k">Unos uključen u cenu</div></div>
+          <div data-hu="&lt;div class=&quot;v&quot;&gt;10 parcella&lt;/div&gt;&lt;div class=&quot;k&quot;&gt;Időkorlát nélkül, az árban&lt;/div&gt;"><div class="v">10 parcela</div><div class="k">Bez vremenskog roka, u ceni</div></div>
           <div data-hu="&lt;div class=&quot;v&quot;&gt;ISOBUS&lt;/div&gt;&lt;div class=&quot;k&quot;&gt;Kompatibilitás&lt;/div&gt;"><div class="v">ISOBUS</div><div class="k">Kompatibilnost</div></div>
         </div>
       </div>
@@ -371,7 +388,7 @@ body{overflow-x:hidden}
       <div class="karta">
         <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18"/></svg>
         <h3 data-hu="RTK jel az árban">RTK signal u ceni</h3>
-        <p data-hu="Egy év az F100-hoz, három év az F200-hoz. Ebben az időszakban előfizetés és rejtett költség nélkül.">Godinu dana uz F100, tri godine uz F200. Bez pretplate i bez skrivenih troškova u tom periodu.</p>
+        <p data-hu="Egy év az F100-hoz, három év az F200-hoz. Ebben az időszakban előfizetés és rejtett költség nélkül. A parcellák időkorlát nélkül az Önéi.">Godinu dana uz F100, tri godine uz F200. Bez pretplate u tom periodu. Parcele, za razliku od signala, nemaju vremenski rok.</p>
       </div>
     </div>
   </div>
@@ -393,7 +410,7 @@ body{overflow-x:hidden}
       </div>
       <div>
         <div class="spec-red" data-hu="&lt;span&gt;Csatlakozás&lt;/span&gt;&lt;span&gt;ISOBUS kompatibilitás&lt;/span&gt;"><span>Povezivanje</span><span>ISOBUS kompatibilnost</span></div>
-        <div class="spec-red" data-hu="&lt;span&gt;Parcellák&lt;/span&gt;&lt;span&gt;10 parcella, a bevitel ingyenes&lt;/span&gt;"><span>Parcele</span><span>10 parcela, unos besplatan</span></div>
+        <div class="spec-red" data-hu="&lt;span&gt;Parcellák&lt;/span&gt;&lt;span&gt;10 parcella, időkorlát nélkül&lt;/span&gt;"><span>Parcele</span><span>10 parcela, bez vremenskog roka</span></div>
         <div class="spec-red" data-hu="&lt;span&gt;Alkalmazás&lt;/span&gt;&lt;span&gt;Vetés, permetezés, műtrágyázás, talajmunka&lt;/span&gt;"><span>Primena</span><span>Setva, prskanje, đubrenje, obrada</span></div>
         <div class="spec-red" data-hu="&lt;span&gt;Beszerelés&lt;/span&gt;&lt;span&gt;Gyors, mi végezzük&lt;/span&gt;"><span>Ugradnja</span><span>Brza, radimo je mi</span></div>
       </div>
@@ -423,7 +440,7 @@ body{overflow-x:hidden}
       <div class="korak">
         <div class="br">02</div>
         <h3 data-hu="Parcellák bevitele">Unos parcela</h3>
-        <p data-hu="Tíz parcellát az Ön választása szerint ingyen viszünk be — egy évre az F100-nál, három évre az F200-nál. A határok, mezsgyék és A-B vonalak elmentve maradnak.">Deset njiva po vašem izboru unosimo besplatno — na godinu dana uz F100, na tri godine uz F200. Granice, međe i A-B linije ostaju upamćene.</p>
+        <p data-hu="Tíz parcellát az Ön választása szerint ingyen viszünk be — időkorlát nélkül, mindkét modellnél. A határok, mezsgyék és A-B vonalak elmentve maradnak.">Deset njiva po vašem izboru unosimo besplatno — bez vremenskog ograničenja, kod oba modela. Granice, međe i A-B linije ostaju upamćene.</p>
       </div>
       <div class="korak">
         <div class="br">03</div>
@@ -488,7 +505,7 @@ body{overflow-x:hidden}
   <div class="wrap">
     <div class="oznaka" data-hu="Ajánlat">Ponuda</div>
     <h2 data-hu="Két modell, mindkét árban benne a telepítés">Dva modela, u obe cene ulazi instalacija</h2>
-    <p class="uvod" data-hu="A különbség nem a pontosságban van — mindkét rendszer ±2,5 cm-t tart. A különbség az, hogy meddig jár az RTK jel és a parcellák felár nélkül.">Razlika nije u preciznosti — oba sistema drže ±2,5 cm. Razlika je u tome koliko dugo RTK signal i parcele idu bez doplate.</p>
+    <p class="uvod" data-hu="A különbség nem a pontosságban van — mindkét rendszer ±2,5 cm-t tart. A különbség csak az, hogy meddig jár az RTK jel felár nélkül. A parcellák mindkét modellnél időkorlát nélkül az Önéi.">Razlika nije u preciznosti — oba sistema drže ±2,5 cm. Razlika je jedino u tome koliko dugo RTK signal ide bez doplate. Parcele kod oba modela ostaju vaše, bez vremenskog roka.</p>
 
     <div class="paket">
       <div>
@@ -496,7 +513,7 @@ body{overflow-x:hidden}
         <div class="cena" data-hu="3.500 € &lt;small&gt;+ ÁFA · telepítéssel&lt;/small&gt;">3.500 € <small>+ PDV · sa instalacijom</small></div>
         <ul class="lista">
           <li data-hu="&lt;b&gt;RTK jel — 1 év&lt;/b&gt;&lt;em&gt;Felár nélkül az első évben&lt;/em&gt;"><b>RTK signal — 1 godina</b><em>Bez doplate u prvoj godini</em></li>
-          <li data-hu="&lt;b&gt;10 parcella — 1 év&lt;/b&gt;&lt;em&gt;A parcellákat Ön választja, a bevitel ingyenes&lt;/em&gt;"><b>10 parcela — 1 godina</b><em>Parcele birate vi, unos je besplatan</em></li>
+          <li data-hu="&lt;b&gt;10 parcella — időkorlát nélkül&lt;/b&gt;&lt;em&gt;A parcellák véglegesen az Öné, a bevitel ingyenes&lt;/em&gt;"><b>10 parcela — bez vremenskog ograničenja</b><em>Parcele ostaju vaše zauvek, unos je besplatan</em></li>
           <li><b>Kompletna instalacija</b><em>Montažu obavljamo mi</em></li>
         </ul>
         <a href="#kontakt" class="btn btn-2 btn-tamni" data-hu="Érdeklődés: F100">Pitaj za F100</a>
@@ -506,7 +523,7 @@ body{overflow-x:hidden}
         <div class="cena" data-hu="4.500 € &lt;small&gt;+ ÁFA · telepítéssel&lt;/small&gt;">4.500 € <small>+ PDV · sa instalacijom</small></div>
         <ul class="lista">
           <li data-hu="&lt;b&gt;RTK jel — 3 év&lt;/b&gt;&lt;em&gt;Három szezon felár nélkül&lt;/em&gt;"><b>RTK signal — 3 godine</b><em>Tri sezone bez doplate</em></li>
-          <li data-hu="&lt;b&gt;10 parcella — 3 év&lt;/b&gt;&lt;em&gt;A parcellákat Ön választja, a bevitel ingyenes&lt;/em&gt;"><b>10 parcela — 3 godine</b><em>Parcele birate vi, unos je besplatan</em></li>
+          <li data-hu="&lt;b&gt;10 parcella — időkorlát nélkül&lt;/b&gt;&lt;em&gt;A parcellák véglegesen az Öné, a bevitel ingyenes&lt;/em&gt;"><b>10 parcela — bez vremenskog ograničenja</b><em>Parcele ostaju vaše zauvek, unos je besplatan</em></li>
           <li><b>Kompletna instalacija</b><em>Montažu obavljamo mi</em></li>
         </ul>
         <a href="#kontakt" class="btn btn-1" data-hu="Érdeklődés: F200">Pitaj za F200</a>
@@ -537,7 +554,7 @@ body{overflow-x:hidden}
       </details>
       <details>
         <summary data-hu="Mi a különbség az F100 és az F200 között?">Koja je razlika između F100 i F200?</summary>
-        <p data-hu="A pontosság ugyanaz — mindkettő ±2,5 cm-t tart. A különbség az időtartam: az F100-hoz egy évre, az F200-hoz három évre jár az RTK jel és a parcellák. Az F200 az újabb generáció.">Preciznost je ista — oba drže ±2,5 cm. Razlika je u trajanju: uz F100 dobijate RTK signal i parcele na godinu dana, uz F200 na tri godine. F200 je novija generacija.</p>
+        <p data-hu="A pontosság ugyanaz — mindkettő ±2,5 cm-t tart. A különbség az RTK jel időtartama: az F100-hoz egy év, az F200-hoz három év jár. A tíz parcella mindkét modellnél időkorlát nélkül az Öné. Az F200 az újabb generáció.">Preciznost je ista — oba drže ±2,5 cm. Razlika je u trajanju RTK signala: uz F100 godinu dana, uz F200 tri godine. Deset parcela kod oba modela ostaje vaše bez vremenskog roka. F200 je novija generacija.</p>
       </details>
       <details>
         <summary data-hu="Mi történik, ha lejár a csomagban lévő RTK jel?">Šta se dešava kad istekne RTK signal iz paketa?</summary>
@@ -545,7 +562,7 @@ body{overflow-x:hidden}
       </details>
       <details>
         <summary data-hu="Mi van, ha tíznél több parcellám van?">Šta ako imam više od 10 parcela?</summary>
-        <p data-hu="Tíz parcella mindkét modellhez ingyen jár, az Ön választása szerint. További parcellákért keressen minket — megállapodunk.">Deset parcela ide besplatno uz oba modela, po vašem izboru. Za dodatne parcele javite nam se — rešavamo dogovorom.</p>
+        <p data-hu="Tíz parcella mindkét modellhez ingyen jár, időkorlát nélkül. További parcellákért keressen minket — megállapodunk.">Deset parcela ide besplatno uz oba modela, bez vremenskog ograničenja. Za dodatne parcele javite nam se — rešavamo dogovorom.</p>
       </details>
       <details>
         <summary data-hu="A traktor vezető nélkül megy?">Da li traktor vozi sam, bez vozača?</summary>
@@ -573,7 +590,7 @@ body{overflow-x:hidden}
       <div class="kontakt-info">
         <div class="blok">
           <div class="k">Telefon</div>
-          <a href="tel:+381606553500">+381 60 655 3500</a>
+          <a href="tel:+381606553500" data-hu="+381 60 712 0294" data-hu-href="tel:+381607120294">+381 60 655 3500</a>
         </div>
         <div class="blok">
           <div class="k">E-mail</div>
@@ -632,7 +649,7 @@ body{overflow-x:hidden}
 <footer>
   <div class="wrap footer-in">
     <span>© <span id="god">2026</span> Autopilot Navigacije · <span data-hu="Topolya">Bačka Topola</span> · Sveaverken F100 <span data-hu="és">i</span> F200</span>
-    <span><a href="https://www.facebook.com/autopilotnavigacije/" target="_blank" rel="noopener">Facebook</a> · <a href="tel:+381606553500" data-hu="Hívás">Pozovi</a></span>
+    <span><a href="https://www.facebook.com/autopilotnavigacije/" target="_blank" rel="noopener">Facebook</a> · <a href="tel:+381606553500" data-hu="Hívás" data-hu-href="tel:+381607120294">Pozovi</a></span>
     <a class="adversa" href="https://psihotrot-tech.github.io/Adversa/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 22h20L12 2z"/></svg>
       Powered by Adversa
@@ -666,6 +683,10 @@ function postaviJezik(j){
   document.querySelectorAll('[data-hu-alt]').forEach(function(e){
     if(e.dataset.srAlt === undefined) e.dataset.srAlt = e.alt;
     e.alt = hu ? e.dataset.huAlt : e.dataset.srAlt;
+  });
+  document.querySelectorAll('[data-hu-href]').forEach(function(e){
+    if(e.dataset.srHref === undefined) e.dataset.srHref = e.getAttribute('href');
+    e.setAttribute('href', hu ? e.dataset.huHref : e.dataset.srHref);
   });
 
   document.documentElement.lang = j;
@@ -734,10 +755,46 @@ forma.addEventListener('submit', function(e){
   })
   .then(function(r){ return r.json(); })
   .then(function(d){
-    if(d.success){ status.textContent = T[jezik].ok; forma.reset(); }
+    if(d.success){
+      status.textContent = T[jezik].ok;
+      meri('poslat_upit', { jezik: jezik, model: (document.getElementById('model') || {}).value });
+      /* Google Ads konverzija — zameni oznaku ispod (AW-XXXXXXXXX/oznaka_forme) */
+      meri('conversion', { send_to: 'AW-XXXXXXXXX/OZNAKA_FORME' });
+      forma.reset();
+    }
     else { status.textContent = T[jezik].ne; }
   })
   .catch(function(){ status.textContent = T[jezik].ne; });
+});
+
+
+/* ---------- MERENJE DOGAĐAJA ---------- */
+function meri(ime, dodatno){
+  if(typeof gtag !== 'function') return;
+  gtag('event', ime, dodatno || {});
+}
+
+/* klik na broj telefona — bilo gde na sajtu */
+document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+  a.addEventListener('click', function(){
+    meri('klik_telefon', { mesto: a.closest('nav') ? 'navigacija' : (a.closest('footer') ? 'futer' : 'kontakt') });
+    /* Google Ads konverzija — zameni oznaku ispod (AW-XXXXXXXXX/oznaka_poziva) */
+    meri('conversion', { send_to: 'AW-XXXXXXXXX/OZNAKA_POZIVA' });
+  });
+});
+
+/* klik na mejl */
+document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+  a.addEventListener('click', function(){ meri('klik_mejl'); });
+});
+
+/* korišćenje kalkulatora — meri se samo jednom po poseti */
+var kalkMeren = false;
+['ha','ops','trosak','prek','cena'].forEach(function(id){
+  var e = document.getElementById(id);
+  if(e) e.addEventListener('change', function(){
+    if(!kalkMeren){ kalkMeren = true; meri('koristio_kalkulator'); }
+  });
 });
 
 document.getElementById('god').textContent = new Date().getFullYear();
