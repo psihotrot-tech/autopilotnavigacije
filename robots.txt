@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://psihotrot-tech.github.io/autopilotnavigacije/sitemap.xml
