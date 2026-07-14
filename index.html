@@ -206,16 +206,20 @@ form .btn-1{width:100%;border:none;cursor:pointer;font-family:'IBM Plex Sans',sa
 @media(max-width:600px){.footer-in{flex-direction:column;align-items:flex-start;gap:12px}}
 
 .galerija{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linija);border:1px solid var(--linija);margin-top:56px}
-.galerija figure{background:var(--zemlja);margin:0}
+.galerija figure{background:var(--zemlja-2);margin:0;display:flex;flex-direction:column}
 .galerija figure:last-child{grid-column:1 / -1}
-.galerija img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3}
+.galerija img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover;flex:none}
 .galerija figure:last-child img{aspect-ratio:16/6}
-.galerija figcaption{font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:var(--slama);opacity:.92;padding:14px 16px 18px;line-height:1.5;border-top:1px solid var(--linija)}
-.galerija figcaption::before{content:'';display:inline-block;width:14px;height:2px;background:var(--rotaciono);vertical-align:middle;margin-right:9px}
+.galerija figcaption{
+  flex:1;background:var(--zemlja);color:#EDE6D6;opacity:1;
+  font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.5;
+  padding:16px 18px 20px;border-top:2px solid var(--rotaciono);
+}
 @media(max-width:700px){
   .galerija{grid-template-columns:1fr}
   .galerija figure:last-child{grid-column:auto}
   .galerija figure:last-child img{aspect-ratio:16/9}
+  .galerija figcaption{font-size:15px}
 }
 
 footer{background:var(--zemlja-2);color:var(--slama);padding:34px 0;font-family:'IBM Plex Mono',monospace;font-size:12px}
