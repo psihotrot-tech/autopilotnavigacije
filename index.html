@@ -87,6 +87,8 @@ h1{font-size:clamp(36px,4.8vw,62px)}
 h1 em{font-style:normal;color:var(--rotaciono)}
 .hero-lead{margin-top:22px;font-size:19px;max-width:44ch;opacity:.82}
 .hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero-rate{margin-top:20px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.02em;color:var(--klas);display:inline-flex;align-items:center;gap:9px}
+.hero-rate::before{content:"";width:14px;height:2px;background:var(--rotaciono);flex:none}
 .btn{display:inline-block;padding:15px 26px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid transparent;transition:transform .15s,background .2s,color .2s}
 .btn:active{transform:translateY(1px)}
 .btn-1{background:var(--rotaciono);color:#fff}
@@ -150,6 +152,7 @@ input[type=range]:focus-visible{outline:2px solid var(--klas);outline-offset:6px
 .paket{display:grid;grid-template-columns:1.05fr 1fr;gap:1px;background:var(--linija-tamna);border:1px solid var(--linija-tamna);margin-top:48px}
 .paket>div{background:var(--slama);padding:40px 34px}
 .cena{font-family:'Archivo Black',sans-serif;font-size:clamp(38px,4.6vw,54px);color:var(--rotaciono);line-height:1}
+.rata{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--njiva);margin-top:14px;padding:8px 12px;background:rgba(63,93,69,.1);border-left:2px solid var(--njiva);display:inline-block}
 .cena small{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--zemlja);opacity:.55;display:block;margin-top:10px;letter-spacing:.06em}
 .lista{list-style:none;margin-top:26px}
 .lista li{padding:12px 0 12px 28px;border-bottom:1px solid var(--linija-tamna);font-size:15px;position:relative}
@@ -392,6 +395,7 @@ body{overflow-x:hidden}
           <a href="#kontakt" class="btn btn-1" data-hu="Kérjen bemutatót">Zakaži demonstraciju</a>
           <a href="#kalkulator" class="btn btn-2" data-hu="Számolja ki a megtakarítást">Izračunaj uštedu</a>
         </div>
+        <p class="hero-rate" data-hu="Kamatmentes részletfizetés 3 évre — F100 már 97 €/hó, F200 125 €/hó.">Beskamatno plaćanje na 3 godine — F100 već od 97 €/mes, F200 125 €/mes.</p>
       </div>
 
       <div class="foto-box">
@@ -615,6 +619,7 @@ body{overflow-x:hidden}
       <div>
         <div class="model-oznaka">Sveaverken F100</div>
         <div class="cena" data-hu="3.500 € &lt;small&gt;+ ÁFA · telepítéssel&lt;/small&gt;">3.500 € <small>+ PDV · sa instalacijom</small></div>
+        <div class="rata" data-hu="vagy 97 €/hó — kamatmentesen 3 évre">ili 97 €/mesečno — bez kamate na 3 godine</div>
         <ul class="lista">
           <li data-hu="&lt;b&gt;RTK jel — 1 év&lt;/b&gt;&lt;em&gt;Felár nélkül az első évben&lt;/em&gt;"><b>RTK signal — 1 godina</b><em>Bez doplate u prvoj godini</em></li>
           <li data-hu="&lt;b&gt;10 parcella — időkorlát nélkül&lt;/b&gt;&lt;em&gt;A parcellák véglegesen az Öné, a bevitel ingyenes&lt;/em&gt;"><b>10 parcela — bez vremenskog ograničenja</b><em>Parcele ostaju vaše zauvek, unos je besplatan</em></li>
@@ -625,6 +630,7 @@ body{overflow-x:hidden}
       <div class="istaknut">
         <div class="model-oznaka">Sveaverken F200 <span class="plamen" data-hu="Új generáció">Nova generacija</span></div>
         <div class="cena" data-hu="4.500 € &lt;small&gt;+ ÁFA · telepítéssel&lt;/small&gt;">4.500 € <small>+ PDV · sa instalacijom</small></div>
+        <div class="rata" data-hu="vagy 125 €/hó — kamatmentesen 3 évre">ili 125 €/mesečno — bez kamate na 3 godine</div>
         <ul class="lista">
           <li data-hu="&lt;b&gt;RTK jel — 3 év&lt;/b&gt;&lt;em&gt;Három szezon felár nélkül&lt;/em&gt;"><b>RTK signal — 3 godine</b><em>Tri sezone bez doplate</em></li>
           <li data-hu="&lt;b&gt;10 parcella — időkorlát nélkül&lt;/b&gt;&lt;em&gt;A parcellák véglegesen az Öné, a bevitel ingyenes&lt;/em&gt;"><b>10 parcela — bez vremenskog ograničenja</b><em>Parcele ostaju vaše zauvek, unos je besplatan</em></li>
@@ -634,7 +640,7 @@ body{overflow-x:hidden}
       </div>
     </div>
 
-    <p class="racunica" data-hu="Az árkülönbség 1.000 €, az F200 viszont két évvel több RTK jelet ad. Ha két szezonnál tovább használja a rendszert — márpedig úgy lesz — az F200 az olcsóbb választás.">Razlika u ceni je 1.000 €, a F200 nosi dve godine RTK signala više. Ako sistem držite duže od dve sezone — a držaćete ga — F200 je jeftiniji izbor.</p>
+    <p class="racunica" data-hu="Az árkülönbség 1.000 €, az F200 viszont két évvel több RTK jelet ad. Ha két szezonnál tovább használja a rendszert — márpedig úgy lesz — az F200 az olcsóbb választás. Mindkét modell elérhető kamatmentes részletfizetéssel, 3 évre.">Razlika u ceni je 1.000 €, a F200 nosi dve godine RTK signala više. Ako sistem držite duže od dve sezone — a držaćete ga — F200 je jeftiniji izbor. Oba modela dostupna su i uz beskamatno plaćanje na 3 godine.</p>
 
     <div style="margin-top:56px">
       <div class="oznaka" data-hu="Amit mindkét modell tud">Šta oba modela imaju</div>
@@ -659,6 +665,10 @@ body{overflow-x:hidden}
       <details>
         <summary data-hu="Mi a különbség az F100 és az F200 között?">Koja je razlika između F100 i F200?</summary>
         <p data-hu="A pontosság ugyanaz — mindkettő ±2,5 cm-t tart. A különbség az RTK jel időtartama: az F100-hoz egy év, az F200-hoz három év jár. A tíz parcella mindkét modellnél időkorlát nélkül az Öné. Az F200 az újabb generáció.">Preciznost je ista — oba drže ±2,5 cm. Razlika je u trajanju RTK signala: uz F100 godinu dana, uz F200 tri godine. Deset parcela kod oba modela ostaje vaše bez vremenskog roka. F200 je novija generacija.</p>
+      </details>
+      <details>
+        <summary data-hu="Van lehetőség részletfizetésre?">Da li postoji mogućnost plaćanja na rate?</summary>
+        <p data-hu="Igen. Mindkét modell elérhető kamatmentes részletfizetéssel, 3 éves futamidőre. Ez az F100 esetében kb. 97 €/hó, az F200 esetében kb. 125 €/hó. A pontos feltételeket a kapcsolatfelvétel után egyeztetjük.">Da. Oba modela dostupna su uz beskamatno plaćanje na rate, sa rokom od 3 godine. To je za F100 oko 97 € mesečno, a za F200 oko 125 € mesečno. Tačne uslove dogovaramo nakon što nam se javite.</p>
       </details>
       <details>
         <summary data-hu="Mi történik, ha lejár a csomagban lévő RTK jel?">Šta se dešava kad istekne RTK signal iz paketa?</summary>
